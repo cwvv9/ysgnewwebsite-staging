@@ -25,7 +25,6 @@
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; }
 
-  /* ── NAV (same as homepage) ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: center;
@@ -48,7 +47,6 @@
   .mobile-nav a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 16px; font-weight: 500; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .mobile-nav a:last-child { border-bottom: none; color: var(--orange); font-weight: 700; }
 
-  /* ── BREADCRUMB / PAGE HEADER ── */
   .page-header { padding: 128px 64px 40px; max-width: 1200px; margin: 0 auto; }
   .breadcrumb { font-size: 13px; color: var(--mid); margin-bottom: 24px; }
   .breadcrumb a { color: var(--mid); text-decoration: none; }
@@ -62,11 +60,9 @@
   .hero-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: var(--white); padding: 14px 28px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; letter-spacing: 0.3px; transition: background 0.2s; }
   .hero-cta:hover { background: #d96a10; }
 
-  /* ── HERO IMAGE BANNER ── */
   .about-hero-img { max-width: 1200px; margin: 0 auto 80px; padding: 0 64px; }
   .about-hero-img img { width: 100%; height: 460px; object-fit: cover; border-radius: 16px; display: block; }
 
-  /* ── SECTION COMMONS ── */
   section { padding: 80px calc((100% - 1200px) / 2); }
   @media (max-width: 1328px) { section { padding: 80px 64px; } .page-header, .about-hero-img { padding-left: 64px; padding-right: 64px; } }
   .section-wrap { max-width: 1200px; margin: 0 auto; }
@@ -74,13 +70,11 @@
   .section-title span { color: var(--orange); }
   .section-sub { font-size: 15px; color: var(--mid); margin-top: 14px; line-height: 1.7; text-align: center; max-width: 640px; margin-left: auto; margin-right: auto; }
 
-  /* ── CHALLENGES ── */
   .challenges { background: var(--white); text-align: center; }
   .challenges .contact-line { font-size: 13px; color: var(--mid); margin-bottom: 24px; }
   .badges-row { display: flex; justify-content: center; align-items: center; gap: 28px; margin-top: 40px; flex-wrap: wrap; }
   .badges-row img { height: 68px; object-fit: contain; }
 
-  /* ── REGIONAL PRESENCE ── */
   .regional { background: var(--white); }
   .regional-grid { display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: 24px; align-items: start; margin-top: 48px; }
   .regional-col { display: flex; flex-direction: column; gap: 20px; }
@@ -92,7 +86,6 @@
   .regional-map { border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 100%; }
   .regional-map img { width: 100%; height: auto; object-fit: contain; }
 
-  /* ── TEAM ── */
   .team { background: var(--light); }
   .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
   .team-card { background: var(--white); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
@@ -102,7 +95,6 @@
   .team-card .team-role { font-size: 12.5px; color: var(--orange); font-weight: 600; margin: 4px 0 10px; }
   .team-card p.bio { font-size: 13px; color: var(--mid); line-height: 1.6; }
 
-  /* ── STATS BENTO (about page variant) ── */
   .stats-about { background: var(--light); }
   .stats-about-grid { display: grid; grid-template-columns: 1.3fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px; max-width: 1200px; margin: 48px auto 0; }
   .stats-about-grid .stat-img { border-radius: 12px; overflow: hidden; grid-row: 1 / 3; }
@@ -116,12 +108,10 @@
   .stat-logo-card { border-radius: 12px; overflow: hidden; background: var(--navy); display: flex; align-items: center; justify-content: center; padding: 24px; }
   .stat-logo-card img { max-height: 60px; object-fit: contain; }
 
-  /* ── PARTNER LOGOS (static grid, about page) ── */
   .partners-about { background: var(--white); text-align: center; }
   .partners-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px 56px; margin-top: 40px; }
   .partners-grid img { height: 36px; object-fit: contain; filter: grayscale(15%); }
 
-  /* ── CTA BANNER (reused) ── */
   .cta-banner { background: var(--white); padding: 0 0 60px 0; display: flex; justify-content: center; }
   .cta-banner-inner { position: relative; width: 100%; max-width: 1200px; min-height: 260px; display: flex; align-items: center; background: url('images/cta-bg.png') center center / cover no-repeat; border-radius: 12px; overflow: hidden; }
   .cta-banner-inner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(30,15,70,0.90) 45%, rgba(30,15,70,0.05) 100%); }
@@ -131,7 +121,6 @@
   .cta-banner a.cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--white); border: 2px solid var(--white); color: var(--dark); padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.2s; }
   .cta-banner a.cta-btn:hover { background: var(--light); border-color: var(--light); }
 
-  /* ── FOOTER (same as homepage) ── */
   footer { background: var(--white); padding: 0 64px 28px; }
   .footer-inner { max-width: 1200px; margin: 0 auto; }
   .footer-nav-bar { display: flex; gap: 8px; align-items: center; padding-bottom: 28px; margin-bottom: 28px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
@@ -152,7 +141,6 @@
   .footer-bottom-left a { text-decoration: underline; margin-left: 0; }
   .linkedin-btn { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 6px; background: #0077B5; margin-top: 14px; }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 0 24px; }
     nav .nav-links { display: none; }
@@ -178,7 +166,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <div class="logo"><img src="images/logo_1.png" alt="YSG"></div>
@@ -200,7 +187,6 @@
   <a href="#contact">Contact Us →</a>
 </div>
 
-<!-- PAGE HEADER -->
 <div class="page-header">
   <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;›&nbsp; <span>About us</span></div>
   <div class="page-header-inner">
@@ -212,27 +198,28 @@
   </div>
 </div>
 
-<!-- HERO IMAGE -->
+<!-- HERO IMAGE: reused images/office.png (already exists) -->
 <div class="about-hero-img">
-  <img src="images/about-hero-team.png" alt="YSG team collaborating in the office">
+  <img src="images/office.png" alt="YSG team collaborating in the office">
 </div>
 
-<!-- CHALLENGES -->
 <section class="challenges">
   <div class="section-wrap">
     <p class="contact-line">hello@ysg.asia&nbsp;&nbsp;|&nbsp;&nbsp;+65 XXXX XXXX</p>
     <h2 class="section-title">We understand your <span>challenges.</span></h2>
     <p class="section-sub">E-commerce success today demands far more than just launching an online store. Brands must simultaneously manage storefront operations, marketing, technology and fulfilment across multiple platforms and channels — often through a fragmented network of vendors. The result is operational complexity, gaps in execution, inefficiency, and resources stretched thin across too many moving parts.</p>
+    <!-- BADGES: swapped placeholders for existing homepage award images -->
     <div class="badges-row">
-      <img src="images/badge-award-1.png" alt="Award badge">
-      <img src="images/badge-award-2.png" alt="Award badge">
-      <img src="images/badge-award-3.png" alt="Award badge">
-      <img src="images/badge-award-4.png" alt="Award badge">
+      <img src="images/ysg-shopee-premium-2025.webp" alt="Shopee Premium">
+      <img src="images/ysg-award-lazada-partner-2024.webp" alt="Lazada Partner">
+      <img src="images/ysg-lazmall-2023.webp" alt="LazMall 2023">
+      <img src="images/ysg-national-business-award-2023.webp" alt="National Business Award">
+      <img src="images/ysg-sg-enterprise.webp" alt="SG Enterprise">
     </div>
   </div>
 </section>
 
-<!-- REGIONAL PRESENCE -->
+<!-- REGIONAL PRESENCE: all cards reused images/warehouse.png (already exists) -->
 <section class="regional">
   <div class="section-wrap">
     <h2 class="section-title">Our <span>Regional</span> Presence</h2>
@@ -241,21 +228,21 @@
     <div class="regional-grid">
       <div class="regional-col">
         <div class="region-card">
-          <img src="images/region-singapore.jpg" alt="Singapore office">
+          <img src="images/warehouse.png" alt="Singapore office">
           <div class="region-info">
             <h4>Singapore</h4>
             <p>Supply Chain City<br>8 Bulim Avenue, #08-06, Singapore 648166</p>
           </div>
         </div>
         <div class="region-card">
-          <img src="images/region-malaysia.jpg" alt="Malaysia facility">
+          <img src="images/warehouse.png" alt="Malaysia facility">
           <div class="region-info">
             <h4>Malaysia</h4>
             <p>Mapletree Shaha Alam Logistics Park, No. 14, Persiaran Perusahaan, Block A unit 1 to 4, Seksyen 23 40300 Shah Alam, Malaysia</p>
           </div>
         </div>
         <div class="region-card">
-          <img src="images/region-thailand.jpg" alt="Thailand facility">
+          <img src="images/warehouse.png" alt="Thailand facility">
           <div class="region-info">
             <h4>Thailand</h4>
             <p>123 Ladkrabang Industrial Estate Soi Chalongkrung 31, Lamprateaw sub-district, Ladkrabang district, Bangkok 10520</p>
@@ -264,26 +251,26 @@
       </div>
 
       <div class="regional-map">
-        <img src="images/asia-regional-map.png" alt="Map of YSG's regional presence across Asia">
+        <img src="images/map-footer.webp" alt="Map of YSG's regional presence across Asia">
       </div>
 
       <div class="regional-col">
         <div class="region-card">
-          <img src="images/region-vietnam.jpg" alt="Vietnam facility">
+          <img src="images/warehouse.png" alt="Vietnam facility">
           <div class="region-info">
             <h4>Vietnam</h4>
             <p>Dong An Hamlet, Binh Hoa Commune, Thuan An District, Binh Duong Province, Vietnam</p>
           </div>
         </div>
         <div class="region-card">
-          <img src="images/region-philippines.jpg" alt="Philippines facility">
+          <img src="images/warehouse.png" alt="Philippines facility">
           <div class="region-info">
             <h4>Philippines</h4>
             <p>123 Ladkrabang Industrial Estate Soi Chalongkrung 31, Lamprateaw sub-district, Ladkrabang district, Bangkok 10520</p>
           </div>
         </div>
         <div class="region-card">
-          <img src="images/region-indonesia.jpg" alt="Indonesia facility">
+          <img src="images/warehouse.png" alt="Indonesia facility">
           <div class="region-info">
             <h4>Indonesia</h4>
             <p>Dong An Hamlet, Binh Hoa Commune, Thuan An District, Binh Duong Province, Vietnam</p>
@@ -294,7 +281,6 @@
   </div>
 </section>
 
-<!-- TEAM -->
 <section class="team">
   <div class="section-wrap">
     <h2 class="section-title">Meet our <span>Expert</span> Team</h2>
@@ -337,11 +323,11 @@
   </div>
 </section>
 
-<!-- STATS -->
+<!-- STATS: reused images/office.png and images/ysg-ych-partner.webp (both already exist) -->
 <section class="stats-about">
   <div class="section-wrap">
     <div class="stats-about-grid">
-      <div class="stat-img"><img src="images/about-office-team.jpg" alt="YSG office team"></div>
+      <div class="stat-img"><img src="images/office.png" alt="YSG office team"></div>
       <div class="stat-card-about orange">
         <div class="stat-num">50+</div>
         <div class="stat-label">Y-SG Pte Ltd</div>
@@ -352,12 +338,12 @@
         <div class="stat-label">YCH Pte Ltd</div>
         <div class="stat-desc">Driving measurable growth and business impact for brands across the region.</div>
       </div>
-      <div class="stat-logo-card"><img src="images/ych-building-signage.jpg" alt="YCH building signage"></div>
+      <div class="stat-logo-card"><img src="images/ysg-ych-partner.webp" alt="YCH logo"></div>
     </div>
   </div>
 </section>
 
-<!-- PARTNERS -->
+<!-- PARTNERS: amazon/ezbuy/lazada already exist; shopee/tiktok/tokopedia/vipshop/zalora still genuinely missing -->
 <section class="partners-about">
   <div class="section-wrap">
     <h2 class="section-title" style="font-size:26px;">Powering growth for brands across operations and e-commerce.</h2>
@@ -374,7 +360,6 @@
   </div>
 </section>
 
-<!-- CTA BANNER -->
 <div class="cta-banner">
   <div class="cta-banner-inner">
     <div class="cta-text">
@@ -385,7 +370,6 @@
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer id="contact">
   <div style="height:3px; background:var(--orange); margin: 0 0 32px 0;"></div>
   <div class="footer-inner">
