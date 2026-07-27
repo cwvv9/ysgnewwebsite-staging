@@ -96,10 +96,10 @@
   .team-card p.bio { font-size: 12.5px; color: var(--mid); line-height: 1.6; }
 
   .stats-about { background: var(--light); }
-  .stats-about-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px; max-width: 1200px; margin: 48px auto 0; }
+  .stats-about-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px; max-width: 1200px; height: 620px; margin: 48px auto 0; }
   .stats-about-grid .stat-img { border-radius: 12px; overflow: hidden; }
   .stats-about-grid .stat-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .stat-card-about { border-radius: 12px; padding: 32px; display: flex; flex-direction: column; justify-content: center; }
+  .stat-card-about { border-radius: 12px; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
   .stat-card-about.orange { background: var(--orange); }
   .stat-card-about.navy { background: var(--navy); }
   .stat-card-about .stat-num { font-size: clamp(40px, 5vw, 56px); font-weight: 900; color: var(--white); line-height: 1; }
@@ -230,7 +230,7 @@
     .regional-grid { grid-template-columns: 1fr; }
     .regional-map { order: -1; }
     .team-grid { grid-template-columns: 1fr 1fr; }
-    .stats-about-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .stats-about-grid { grid-template-columns: 1fr; grid-template-rows: auto; height: auto; }
     .stats-about-grid .stat-img { min-height: 220px; }
     .stats-about-grid .stat-signboard { min-height: 220px; }
     .footer-top { grid-template-columns: 1fr; gap: 24px; }
@@ -253,9 +253,8 @@
   <div class="nav-inner">
     <div class="logo"><img src="images/logo_1.png" alt="YSG"></div>
     <div class="nav-links">
+      <a href="index.html">Homepage</a>
       <a href="about.html" class="active">About Us</a>
-      <a href="services.html">Our Services</a>
-      <a href="success-stories.html">Success Stories</a>
       <a href="#contact" class="nav-cta">Contact Us →</a>
     </div>
     <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
@@ -264,9 +263,8 @@
   </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Homepage</a>
   <a href="about.html">About Us</a>
-  <a href="services.html">Our Services</a>
-  <a href="success-stories.html">Success Stories</a>
   <a href="#contact">Contact Us →</a>
 </div>
 
