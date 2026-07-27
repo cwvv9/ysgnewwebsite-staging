@@ -103,10 +103,11 @@
   .stat-card-about.orange { background: var(--orange); }
   .stat-card-about.navy { background: var(--navy); }
   .stat-card-about .stat-num { font-size: clamp(40px, 5vw, 56px); font-weight: 900; color: var(--white); line-height: 1; }
-  .stat-card-about .stat-label { font-size: 14px; font-weight: 700; color: var(--white); margin-top: 12px; }
-  .stat-card-about .stat-desc { font-size: 12.5px; color: rgba(255,255,255,0.7); margin-top: 8px; line-height: 1.6; }
-  .stat-logo-card { border-radius: 12px; overflow: hidden; background: var(--navy); display: flex; align-items: center; justify-content: center; padding: 24px; }
-  .stat-logo-card img { max-height: 60px; object-fit: contain; }
+  .stat-card-about.navy .stat-num { color: var(--orange); }
+  .stat-card-about .stat-label { font-size: 14px; font-weight: 700; color: var(--white); margin-top: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.35); }
+  .stat-card-about .stat-desc { font-size: 12.5px; color: rgba(255,255,255,0.7); margin-top: 12px; line-height: 1.6; }
+  .stats-about-grid .stat-signboard { border-radius: 12px; overflow: hidden; }
+  .stats-about-grid .stat-signboard img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   .partners-about { background: var(--white); text-align: center; }
   .partners-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px 56px; margin-top: 40px; }
@@ -231,6 +232,7 @@
     .team-grid { grid-template-columns: 1fr 1fr; }
     .stats-about-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
     .stats-about-grid .stat-img { min-height: 220px; }
+    .stats-about-grid .stat-signboard { min-height: 220px; }
     .footer-top { grid-template-columns: 1fr; gap: 24px; }
     .footer-map-col img { width: 100% !important; max-width: 100% !important; }
     footer { padding: 0 24px 28px; }
@@ -418,7 +420,7 @@
         <div class="stat-label">YCH Pte Ltd</div>
         <div class="stat-desc">Driving measurable growth and business impact for brands across the region.</div>
       </div>
-      <div class="stat-logo-card"><img src="images/ysg-ych-partner.webp" alt="YCH logo"></div>
+      <div class="stat-signboard"><img src="images/ych-signboard.png" alt="YCH signboard"></div>
     </div>
   </div>
 </section>
