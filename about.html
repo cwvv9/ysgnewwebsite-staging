@@ -99,13 +99,13 @@
   .stats-about-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px; max-width: 1200px; height: 620px; margin: 48px auto 0; }
   .stats-about-grid .stat-img { border-radius: 12px; overflow: hidden; }
   .stats-about-grid .stat-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .stat-card-about { border-radius: 12px; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+  .stat-card-about { border-radius: 12px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; }
   .stat-card-about.orange { background: var(--orange); }
   .stat-card-about.navy { background: var(--navy); }
-  .stat-card-about .stat-num { font-size: clamp(40px, 5vw, 56px); font-weight: 900; color: var(--white); line-height: 1; }
+  .stat-card-about .stat-num { font-size: clamp(48px, 6vw, 67px); font-weight: 900; color: var(--white); line-height: 1; }
   .stat-card-about.navy .stat-num { color: var(--orange); }
-  .stat-card-about .stat-label { font-size: 14px; font-weight: 700; color: var(--white); margin-top: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.35); }
-  .stat-card-about .stat-desc { font-size: 12.5px; color: rgba(255,255,255,0.7); margin-top: 12px; line-height: 1.6; }
+  .stat-card-about .stat-label { font-size: 15px; font-weight: 700; color: var(--white); margin-top: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.35); }
+  .stat-card-about .stat-desc { font-size: 15px; color: rgba(255,255,255,0.7); margin-top: 12px; line-height: 1.6; }
   .stats-about-grid .stat-signboard { border-radius: 12px; overflow: hidden; }
   .stats-about-grid .stat-signboard img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
@@ -410,13 +410,17 @@
       <div class="stat-img"><img src="images/office.png" alt="YSG office team"></div>
       <div class="stat-card-about orange">
         <div class="stat-num">50+</div>
-        <div class="stat-label">Y-SG Pte Ltd</div>
-        <div class="stat-desc">Driving measurable growth and business impact for brands across the region.</div>
+        <div class="stat-bottom">
+          <div class="stat-label">Y-SG Pte Ltd</div>
+          <div class="stat-desc">Driving measurable growth and business impact for brands across the region.</div>
+        </div>
       </div>
       <div class="stat-card-about navy">
         <div class="stat-num">1000+</div>
-        <div class="stat-label">YCH Pte Ltd</div>
-        <div class="stat-desc">Driving measurable growth and business impact for brands across the region.</div>
+        <div class="stat-bottom">
+          <div class="stat-label">YCH Pte Ltd</div>
+          <div class="stat-desc">Driving measurable growth and business impact for brands across the region.</div>
+        </div>
       </div>
       <div class="stat-signboard"><img src="images/ych-signboard.png" alt="YCH signboard"></div>
     </div>
