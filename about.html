@@ -47,7 +47,7 @@
   .mobile-nav a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 16px; font-weight: 500; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .mobile-nav a:last-child { border-bottom: none; color: var(--orange); font-weight: 700; }
 
-  .page-header { padding: 128px 64px 40px; max-width: 1200px; margin: 0 auto; }
+  .page-header { padding: 128px calc((100% - 1200px) / 2) 40px; }
   .breadcrumb { font-size: 13px; color: var(--mid); margin-bottom: 24px; }
   .breadcrumb a { color: var(--mid); text-decoration: none; }
   .breadcrumb span { color: var(--dark); font-weight: 600; }
@@ -60,11 +60,14 @@
   .hero-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: var(--white); padding: 14px 28px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; letter-spacing: 0.3px; transition: background 0.2s; }
   .hero-cta:hover { background: #d96a10; }
 
-  .about-hero-img { max-width: 1200px; margin: 0 auto 80px; padding: 0 64px; }
-  .about-hero-img img { width: 100%; height: 460px; object-fit: cover; border-radius: 16px; display: block; }
+  .about-hero-img { width: 100%; margin: 0 0 80px; padding: 0; }
+  .about-hero-img img { width: 100%; height: 460px; object-fit: cover; border-radius: 0; display: block; }
 
   section { padding: 80px calc((100% - 1200px) / 2); }
-  @media (max-width: 1328px) { section { padding: 80px 64px; } .page-header, .about-hero-img { padding-left: 64px; padding-right: 64px; } }
+  @media (max-width: 1328px) {
+    section { padding: 80px 64px; }
+    .page-header { padding-left: 64px; padding-right: 64px; }
+  }
   .section-wrap { max-width: 1200px; margin: 0 auto; }
   .section-title { font-size: clamp(28px, 3vw, 40px); font-weight: 800; color: var(--navy); line-height: 1.2; text-align: center; }
   .section-title span { color: var(--orange); }
@@ -228,7 +231,7 @@
     nav .nav-links { display: none; }
     .nav-hamburger { display: flex; }
     section { padding: 60px 24px; }
-    .page-header, .about-hero-img { padding: 0 24px; }
+    .page-header { padding: 0 24px; }
     .about-hero-img img { height: 260px; }
     .regional-grid { grid-template-columns: 1fr; }
     .regional-map { order: -1; }
@@ -285,7 +288,7 @@
   </div>
 </div>
 
-<!-- HERO IMAGE: reused images/office.png (already exists) -->
+<!-- HERO IMAGE: now full-bleed / full width -->
 <div class="about-hero-img">
   <img src="images/about-hero-team.png" alt="YSG team collaborating in the office">
 </div>
