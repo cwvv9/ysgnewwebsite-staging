@@ -78,11 +78,14 @@
   .regional { background: var(--white); }
   .regional-grid { display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: 24px; align-items: start; margin-top: 48px; }
   .regional-col { display: flex; flex-direction: column; gap: 20px; }
-  .region-card { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-  .region-card img { width: 100%; height: 300px; object-fit: cover; display: block; }
-  .region-card .region-info { padding: 14px 16px 18px; }
+
+  /* UPDATED: region-card now horizontal — image left, details right */
+  .region-card { display: flex; flex-direction: row; align-items: stretch; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .region-card img { width: 120px; min-width: 120px; height: auto; object-fit: cover; display: block; }
+  .region-card .region-info { padding: 14px 16px; display: flex; flex-direction: column; justify-content: center; }
   .region-card h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
   .region-card p { font-size: 12.5px; color: var(--mid); line-height: 1.6; }
+
   .regional-map { border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 100%; }
   .regional-map img { width: 100%; height: auto; object-fit: contain; }
 
@@ -229,6 +232,7 @@
     .about-hero-img img { height: 260px; }
     .regional-grid { grid-template-columns: 1fr; }
     .regional-map { order: -1; }
+    .region-card img { width: 100px; min-width: 100px; }
     .team-grid { grid-template-columns: 1fr 1fr; }
     .stats-about-grid { grid-template-columns: 1fr; grid-template-rows: auto; height: auto; }
     .stats-about-grid .stat-img { min-height: 220px; }
@@ -244,6 +248,8 @@
   }
   @media (max-width: 600px) {
     .team-grid { grid-template-columns: 1fr; }
+    .region-card { flex-direction: row; }
+    .region-card img { width: 90px; min-width: 90px; }
   }
 </style>
 </head>
@@ -299,7 +305,7 @@
   </div>
 </section>
 
-<!-- REGIONAL PRESENCE: all cards reused images/warehouse.png (already exists) -->
+<!-- REGIONAL PRESENCE: cards updated to left-image / right-details layout; PH & ID addresses corrected -->
 <section class="regional">
   <div class="section-wrap">
     <h2 class="section-title">Our <span>Regional</span> Presence</h2>
@@ -343,19 +349,19 @@
           </div>
         </div>
         <div class="region-card">
-        <img src="images/wh-ph.png" alt="Philippines facility">
-        <div class="region-info">
-          <h4>Philippines</h4>
-          <p>Manggahan Light Industrial Park, Amang Rodriguez Avenue, Pasig City 1611, Philippines</p>
+          <img src="images/wh-ph.png" alt="Philippines facility">
+          <div class="region-info">
+            <h4>Philippines</h4>
+            <p>Manggahan Light Industrial Park, Amang Rodriguez Avenue, Pasig City 1611, Philippines</p>
+          </div>
         </div>
-      </div>
-      <div class="region-card">
-        <img src="images/wh-id.png" alt="Indonesia facility">
-        <div class="region-info">
-          <h4>Indonesia</h4>
-          <p>Jl. Raya Kalimalang KM 2, Desa Sukadanau, Cikarang Barat – Cibitung, Kab. Bekasi 17520, West Java, Indonesia</p>
+        <div class="region-card">
+          <img src="images/wh-id.png" alt="Indonesia facility">
+          <div class="region-info">
+            <h4>Indonesia</h4>
+            <p>Jl. Raya Kalimalang KM 2, Desa Sukadanau, Cikarang Barat – Cibitung, Kab. Bekasi 17520, West Java, Indonesia</p>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   </div>
