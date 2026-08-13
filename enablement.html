@@ -160,6 +160,7 @@
   @keyframes wa-pulse { 0% { transform: scale(1); opacity: 0.7; } 70% { transform: scale(1.6); opacity: 0; } 100% { opacity: 0; } }
   @keyframes wa-pop { 0% { transform: scale(0); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
 
+  /* ── RESPONSIVE 900px ── */
   @media (max-width: 900px) {
     nav { padding: 0 24px; }
     nav .nav-links { display: none; }
@@ -168,17 +169,67 @@
     .page-header { padding: 100px 24px 0; }
     .page-header-inner { flex-direction: column; align-items: flex-start; }
     .services-hero-img img { margin-top: 25px; height: 260px; }
+
+    .marketplace-badges { gap: 10px; }
+    .marketplace-badges .badge { padding: 9px 16px; }
+    .marketplace-badges .badge img { height: 28px; }
+
+    .detail-media.phone-media.phone-media-lg img { max-width: 260px; }
+
     .footer-top { grid-template-columns: 1fr; gap: 24px; }
+    .footer-map-col { justify-content: flex-start !important; margin-top: 8px; }
     .footer-map-col img { width: 100% !important; max-width: 100% !important; }
     footer { padding: 0 24px 28px; }
     .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .footer-bottom-left { display: flex; flex-wrap: wrap; row-gap: 6px; column-gap: 12px; }
+    .footer-nav-bar { gap: 4px; }
+    .footer-nav-bar a, .footer-nav-bar .footer-nav-item { font-size: 13px; padding: 0 8px; }
+
     .cta-text { padding: 40px 28px; max-width: 100%; }
+
     .wa-float { bottom: 20px; right: 20px; }
     .wa-btn { width: 52px; height: 52px; }
     .wa-btn::before { width: 52px; height: 52px; }
   }
+
+  /* ── RESPONSIVE 480px ── */
   @media (max-width: 480px) {
+    .page-header { padding: 92px 20px 0; }
+    .page-header-text p { font-size: 14px; }
+
+    .marketplace-badges .badge { padding: 8px 14px; gap: 6px; }
+    .marketplace-badges .badge img { height: 24px; }
+    .marketplace-note { font-size: 12px; }
+
+    .services-hero-img img { height: 200px; }
+
+    section { padding: 48px 20px; }
+
+    .detail-card { padding: 16px 18px; }
+    .detail-card h4 { font-size: 14px; }
+    .detail-card p { font-size: 12px; }
+
+    .detail-media.phone-media.phone-media-lg img { max-width: 220px; }
+    .detail-media.phone-media img { max-width: 200px; }
+
     .explore-card img { height: 160px; }
+    .explore-card h3 { font-size: 15px; }
+    .explore-card p { font-size: 12px; }
+
+    .cta-text { padding: 28px 20px; }
+    .cta-banner h2 { font-size: 24px; }
+    .cta-banner p { font-size: 13px; }
+
+    .footer-nav-bar span { display: none; }
+    .footer-nav-bar a, .footer-nav-bar .footer-nav-item { padding: 0 5px; font-size: 11px; }
+
+    .footer-bottom p { font-size: 11px; }
+    .footer-bottom a { font-size: 11px; margin-left: 0; }
+    .footer-bottom-left span { display: none; }
+
+    .wa-float { bottom: 16px; right: 16px; }
+    .wa-btn { width: 48px; height: 48px; }
+    .wa-btn svg { width: 26px; height: 26px; }
   }
 </style>
 </head>
@@ -199,10 +250,10 @@
   </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
-  <a href="index.html">Home</a>
-  <a href="our-services.html">Our Services</a>
+  <a href="index.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Home</a>
+  <a href="our-services.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Our Services</a>
   <!-- <a href="success-stories.html">Success Stories</a> -->
-  <a href="#contact">Contact Us →</a>
+  <a href="#contact" onclick="document.getElementById('mobileNav').classList.remove('open')">Contact Us →</a>
 </div>
 
 <div class="page-header">
