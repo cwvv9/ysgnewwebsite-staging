@@ -95,12 +95,8 @@
   .detail-block:nth-of-type(even) { background: var(--light); }
 
   /* ── CAMPAIGN STRIP (banner collage) ── */
-  .campaign-strip { background: var(--navy); padding: 0; }
-  .campaign-strip-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; max-width: 1200px; margin: 0 auto; }
-  .campaign-strip-grid img { width: 100%; height: 140px; object-fit: cover; display: block; }
-  @media (max-width: 900px) {
-    .campaign-strip-grid { grid-template-columns: repeat(2, 1fr); }
-  }
+  .campaign-strip { background: var(--navy); padding: 0; display: flex; justify-content: center; }
+  .campaign-strip-img { width: 100%; max-width: 1200px; height: auto; display: block; }
 
   @media (max-width: 900px) {
     .detail-block-inner, .detail-block.reverse .detail-block-inner { grid-template-columns: 1fr; }
@@ -318,15 +314,8 @@
     </div>
   </div>
 </section>
-
-<!-- CAMPAIGN VISUAL STRIP -->
 <div class="campaign-strip">
-  <div class="campaign-strip-grid">
-    <img src="images/creative-campaign-strip-1.png" alt="Flavours That Bind campaign banner">
-    <img src="images/creative-campaign-strip-2.png" alt="Flavours That Bind campaign banner">
-    <img src="images/creative-campaign-strip-3.png" alt="Flavours That Bind campaign banner">
-    <img src="images/creative-campaign-strip-4.png" alt="Flavours That Bind campaign banner">
-  </div>
+  <img src="images/creative-campaign-strip.png" alt="Flavours That Bind campaign creative collage" class="campaign-strip-img">
 </div>
 
 <!-- CAMPAIGN & PERFORMANCE -->
