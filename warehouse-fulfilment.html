@@ -131,21 +131,15 @@
     .superport-cards { grid-template-columns: 1fr; }
   }
 
-  /* ── CTA ── */
-  .cta-section { padding: 0; }
-  .cta-banner { position: relative; background: linear-gradient(120deg, var(--navy) 0%, var(--purple) 55%, var(--navy) 100%); overflow: hidden; }
-  .cta-banner-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; min-height: 300px; }
-  .cta-copy { padding: 60px 64px 60px 0; }
-  .cta-copy h2 { font-size: clamp(26px, 3vw, 34px); font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 14px; }
-  .cta-copy p { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 26px; max-width: 400px; }
-  .cta-copy .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--navy); padding: 12px 26px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; }
-  .cta-img { height: 100%; }
-  .cta-img img { width: 100%; height: 100%; min-height: 300px; object-fit: cover; display: block; }
-  @media (max-width: 900px) {
-    .cta-banner-inner { grid-template-columns: 1fr; }
-    .cta-copy { padding: 48px 24px 32px; }
-    .cta-img img { min-height: 200px; }
-  }
+  /* ── CTA BANNER ── */
+  .cta-banner { background: var(--white); padding: 0 0 60px 0; display: flex; justify-content: center; }
+  .cta-banner-inner { position: relative; width: 100%; max-width: 1200px; min-height: 260px; display: flex; align-items: center; background: url('images/cta-bg.png') center center / cover no-repeat; border-radius: 12px; overflow: hidden; }
+  .cta-banner-inner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(30,15,70,0.90) 45%, rgba(30,15,70,0.05) 100%); }
+  .cta-text { position: relative; z-index: 2; max-width: 440px; padding: 56px 48px; }
+  .cta-banner h2 { font-size: clamp(28px, 3vw, 42px); font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 12px; }
+  .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 28px; }
+  .cta-banner a.cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--white); border: 2px solid var(--white); color: var(--dark); padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.2s; }
+  .cta-banner a.cta-btn:hover { background: var(--light); border-color: var(--light); }
 
   /* ── EXPLORE OTHERS ── */
   .explore { background: var(--white); }
@@ -216,6 +210,8 @@
     .footer-nav-bar { gap: 4px; }
     .footer-nav-bar a, .footer-nav-bar .footer-nav-item { font-size: 13px; padding: 0 8px; }
 
+    .cta-text { padding: 40px 28px; max-width: 100%; }
+
     .wa-float { bottom: 20px; right: 20px; }
     .wa-btn { width: 52px; height: 52px; }
     .wa-btn::before { width: 52px; height: 52px; }
@@ -239,6 +235,10 @@
     .explore-card img { height: 160px; }
     .explore-card h3 { font-size: 15px; }
     .explore-card p { font-size: 12px; }
+
+    .cta-text { padding: 28px 20px; }
+    .cta-banner h2 { font-size: 24px; }
+    .cta-banner p { font-size: 13px; }
 
     .footer-nav-bar span { display: none; }
     .footer-nav-bar a, .footer-nav-bar .footer-nav-item { padding: 0 5px; font-size: 11px; }
@@ -390,21 +390,15 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <div class="cta-banner">
-    <div class="cta-banner-inner">
-      <div class="cta-copy">
-        <h2>Ready to Grow<br>Your Business?</h2>
-        <p>Let's explore how YSG can support your operations and e-commerce growth.</p>
-        <a href="#contact" class="cta-btn">CONTACT US →</a>
-      </div>
-      <div class="cta-img">
-        <img src="images/warehouse-cta-building.png" alt="Supply Chain City building facade">
-      </div>
+<div class="cta-banner">
+  <div class="cta-banner-inner">
+    <div class="cta-text">
+      <h2>Ready to Grow<br>Your Business?</h2>
+      <p>Let's explore how YSG can support your operations and e-commerce growth.</p>
+      <a href="#contact" class="cta-btn">CONTACT US &nbsp;<span style="color:var(--orange);">→</span></a>
     </div>
   </div>
-</section>
+</div>
 
 <!-- EXPLORE OTHERS -->
 <section class="explore">
