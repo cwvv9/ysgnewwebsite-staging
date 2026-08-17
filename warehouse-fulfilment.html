@@ -91,6 +91,11 @@
   .detail-block:nth-of-type(odd) { background: var(--white); }
   .detail-block:nth-of-type(even) { background: var(--light); }
 
+  /* ── FUSIONARIS (stacked text + full-width image) ── */
+  .fusionaris-section { background: var(--white); }
+  .fusionaris-text { max-width: 640px; margin-bottom: 32px; }
+  .fusionaris-img-wrap img { width: 100%; border-radius: 12px; display: block; object-fit: cover; }
+
   /* ── CHECK LIST (WMS features) ── */
   .check-list { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px 24px; margin-top: 26px; }
   .check-item { display: flex; align-items: flex-start; gap: 10px; }
@@ -291,17 +296,15 @@
 </div>
 
 <!-- FUSIONARIS -->
-<section class="detail-block reverse">
-  <div class="detail-block-inner">
-    <div class="detail-copy">
-      <h2 class="section-title">Fusionaris</h2>
-      <div class="eyebrow">Infinite Possibilities</div>
-      <p class="body-text">As the centrepiece of Supply Chain City, Fusionaris® is a world-first, patented innovation that integrates a 5-storey ramp-up warehouse and a 50-metre-high automated storage and retrieval system (ASRS).</p>
-      <p class="body-text">By merging manual handling with high-speed robotics, it maximises land-use density and eliminates operational bottlenecks. Fusionaris® offers a scalable, future-proof platform that enables infinite possibilities for businesses to innovate and grow within the global supply chain.</p>
-    </div>
-    <div class="detail-media">
-      <img src="images/warehouse-fusionaris-building.png" alt="Fusionaris building at Supply Chain City">
-    </div>
+<section class="fusionaris-section">
+  <div class="fusionaris-text">
+    <h2 class="section-title">Fusionaris</h2>
+    <div class="eyebrow">Infinite Possibilities</div>
+    <p class="body-text">As the centrepiece of Supply Chain City, Fusionaris® is a world-first, patented innovation that integrates a 5-storey ramp-up warehouse and a 50-metre-high automated storage and retrieval system (ASRS).</p>
+    <p class="body-text">By merging manual handling with high-speed robotics, it maximises land-use density and eliminates operational bottlenecks. Fusionaris® offers a scalable, future-proof platform that enables infinite possibilities for businesses to innovate and grow within the global supply chain.</p>
+  </div>
+  <div class="fusionaris-img-wrap">
+    <img src="images/warehouse-fusionaris-building.png" alt="Fusionaris building at Supply Chain City">
   </div>
 </section>
 
