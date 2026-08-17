@@ -97,13 +97,22 @@
   .detail-block.stretch .detail-media { display: flex; }
   .detail-block.stretch .detail-media img { width: 100%; height: 100%; min-height: 500px; }
 
-  /* ── FUSIONARIS (text block on white, then full-width image below) ── */
-  .fusionaris-section { background: var(--white); padding-bottom: 0; }
-  .fusionaris-text { max-width: 640px; }
-  .fusionaris-text .section-title { margin-bottom: 20px; }
-  .fusionaris-text .eyebrow { margin-bottom: 20px; }
-  .fusionaris-img-wrap { width: 100%; margin-top: 40px; }
-  .fusionaris-img-wrap img { width: 100%; height: 460px; object-fit: cover; display: block; }
+  /* ── FUSIONARIS (text overlapping the sky area of a full-width image) ── */
+  .fusionaris-hero { position: relative; width: 100%; height: 640px; overflow: hidden; margin-top: 40px; }
+  .fusionaris-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .fusionaris-overlay {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    display: flex; align-items: flex-start;
+    padding: 64px calc((100% - 1200px) / 2) 0;
+    background: linear-gradient(to right, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.45) 38%, rgba(255,255,255,0) 62%);
+  }
+  .fusionaris-overlay .fusionaris-text { max-width: 540px; }
+  .fusionaris-overlay .section-title { margin-bottom: 18px; }
+  .fusionaris-overlay .eyebrow { margin-bottom: 18px; }
+
+  @media (max-width: 1328px) {
+    .fusionaris-overlay { padding-left: 64px; padding-right: 64px; }
+  }
 
   /* ── CHECK LIST (WMS features) ── */
   .check-list { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px 24px; margin-top: 26px; }
@@ -216,7 +225,8 @@
     .page-header { padding: 100px 24px 0; }
     .page-header-inner { flex-direction: column; align-items: flex-start; }
     .services-hero-img img { margin-top: 25px; height: 260px; }
-    .fusionaris-img-wrap img { height: 300px; }
+    .fusionaris-hero { height: 560px; margin-top: 28px; }
+    .fusionaris-overlay { padding: 32px 24px 0; background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.4) 45%, rgba(255,255,255,0) 68%); }
 
     .footer-top { grid-template-columns: 1fr; gap: 24px; }
     .footer-map-col { justify-content: flex-start !important; margin-top: 8px; }
@@ -240,7 +250,10 @@
     .page-header-text p { font-size: 14px; }
 
     .services-hero-img img { height: 200px; }
-    .fusionaris-img-wrap img { height: 220px; }
+    .fusionaris-hero { height: 480px; margin-top: 20px; }
+    .fusionaris-overlay { padding: 22px 20px 0; background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0) 75%); }
+    .fusionaris-overlay .section-title { margin-bottom: 12px; }
+    .fusionaris-overlay .eyebrow { margin-bottom: 12px; }
 
     section { padding: 48px 20px; }
 
@@ -309,17 +322,17 @@
 </div>
 
 <!-- FUSIONARIS -->
-<section class="fusionaris-section">
-  <div class="fusionaris-text">
-    <h2 class="section-title">Fusionaris</h2>
-    <div class="eyebrow">Infinite Possibilities</div>
-    <p class="body-text">As the centrepiece of Supply Chain City, Fusionaris® is a world-first, patented innovation that integrates a 5-storey ramp-up warehouse and a 50-metre-high automated storage and retrieval system (ASRS).</p>
-    <p class="body-text">By merging manual handling with high-speed robotics, it maximises land-use density and eliminates operational bottlenecks. Fusionaris® offers a scalable, future-proof platform that enables infinite possibilities for businesses to innovate and grow within the global supply chain.</p>
+<div class="fusionaris-hero">
+  <img src="images/warehouse-fusionaris-building.png" alt="Fusionaris building at Supply Chain City">
+  <div class="fusionaris-overlay">
+    <div class="fusionaris-text">
+      <h2 class="section-title">Fusionaris</h2>
+      <div class="eyebrow">Infinite Possibilities</div>
+      <p class="body-text">As the centrepiece of Supply Chain City, Fusionaris® is a world-first, patented innovation that integrates a 5-storey ramp-up warehouse and a 50-metre-high automated storage and retrieval system (ASRS).</p>
+      <p class="body-text">By merging manual handling with high-speed robotics, it maximises land-use density and eliminates operational bottlenecks. Fusionaris® offers a scalable, future-proof platform that enables infinite possibilities for businesses to innovate and grow within the global supply chain.</p>
+    </div>
   </div>
-  <div class="fusionaris-img-wrap">
-    <img src="images/warehouse-fusionaris-building.png" alt="Fusionaris building at Supply Chain City">
-  </div>
-</section>
+</div>
 
 <!-- WMS -->
 <section class="detail-block reverse stretch">
