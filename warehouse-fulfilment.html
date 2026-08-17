@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warehouse & Fulfilment | YSG</title>
+<meta name="description" content="YSG warehouse and fulfilment solutions, warehouse management systems and regional logistics infrastructure.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--orange:#F47920;--navy:#1A2744;--purple:#3B2A6B;--dark:#111827;--mid:#6B7280;--light:#F8F8FA;--white:#fff;--border:#E5E7EB}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;color:var(--dark);background:#1c1c1c;overflow-x:hidden}
+.page{max-width:1200px;margin:0 auto;background:#fff;min-height:100vh}
+nav{height:68px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 48px}
+.nav-inner{width:100%;display:flex;align-items:center;justify-content:space-between}
+.logo img{height:38px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{color:var(--dark);text-decoration:none;font-size:12px;font-weight:600}
+.nav-cta{background:var(--orange);color:#fff!important;padding:12px 20px;border-radius:5px}
+.nav-hamburger{display:none;background:none;border:0;gap:5px;flex-direction:column}
+.nav-hamburger span{width:24px;height:2px;background:var(--dark);display:block}
+.mobile-nav{display:none}
+.header{padding:54px 60px 0}
+.breadcrumb{font-size:11px;color:#8A8F98;margin-bottom:24px}
+.breadcrumb span{color:var(--dark);font-weight:600}
+.header-grid{display:grid;grid-template-columns:0.8fr 1.2fr;gap:80px;align-items:start}
+h1{font-size:43px;line-height:1.02;color:var(--orange);font-weight:800;letter-spacing:-1.2px}
+.header-copy{font-size:11px;line-height:1.55;color:var(--dark);padding-top:2px}
+.hero{margin-top:30px;width:100%;height:420px;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+section{padding:70px 60px}
+.fusion{padding-top:0;background:#fff}
+.fusion-img{width:100%;height:390px;overflow:hidden}
+.fusion-img img{width:100%;height:100%;object-fit:cover}
+.wms{display:grid;grid-template-columns:1fr 1fr;background:#fff}
+.wms-copy{padding:28px 36px 30px 0}
+.section-title{font-size:27px;line-height:1.02;color:var(--purple);font-weight:800;letter-spacing:-.5px}
+.section-sub{font-size:10px;line-height:1.55;color:var(--dark);margin-top:12px}
+.wms-list{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;margin-top:22px}
+.wms-item{font-size:9px;line-height:1.35;display:flex;gap:8px;align-items:flex-start}
+.wms-item::before{content:"";width:8px;height:8px;min-width:8px;border-radius:50%;background:var(--orange);margin-top:2px}
+.wms-photo{height:300px;overflow:hidden}
+.wms-photo img{width:100%;height:100%;object-fit:cover}
+.superport{padding-top:30px;text-align:center}
+.superport h2{font-size:25px;color:var(--purple);font-weight:800}
+.superport-intro{max-width:850px;margin:12px auto 24px;font-size:10px;line-height:1.55;text-align:left}
+.superport-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:left}
+.card{border:1px solid #D9D9DE;border-radius:4px;padding:16px}
+.card h3{font-size:14px;color:var(--dark);line-height:1.25;margin-bottom:12px}
+.jv-row{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}
+.jv-row:last-child{border-bottom:0}
+.jv-row img{width:90px;height:55px;object-fit:cover;border-radius:2px}
+.jv-row p{font-size:8px;line-height:1.45;color:var(--mid)}
+.port-card{background:var(--purple);border-color:var(--purple);color:#fff}
+.port-card h3{color:#fff}
+.port-card img{width:100%;height:92px;object-fit:cover;margin-bottom:10px;background:#fff}
+.port-card ul{padding-left:14px}
+.port-card li{font-size:8px;line-height:1.5;margin-bottom:4px}
+.cta{padding-top:20px;padding-bottom:45px}
+.cta-inner{height:220px;border-radius:5px;overflow:hidden;position:relative;background:url("images/cta.webp") center/cover no-repeat}
+.cta-inner::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(45,26,85,.95),rgba(45,26,85,.2))}
+.cta-copy{position:relative;z-index:1;color:#fff;padding:42px 48px;max-width:460px}
+.cta-copy h2{font-size:30px;line-height:1.05;margin-bottom:12px}
+.cta-copy p{font-size:10px;line-height:1.5;color:rgba(255,255,255,.8);margin-bottom:20px}
+.cta-copy a{display:inline-block;background:#fff;color:var(--dark);padding:10px 16px;border-radius:4px;font-size:9px;font-weight:700;text-decoration:none}
+.explore{padding-top:0}
+.explore h2{text-align:center;font-size:25px;color:var(--purple);margin-bottom:22px}
+.explore-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.explore-card img{width:100%;height:135px;object-fit:cover;display:block;border-radius:3px;margin-bottom:10px}
+.explore-card h3{font-size:12px;color:var(--dark);margin-bottom:6px}
+.explore-card h3 span{color:var(--orange)}
+.explore-card p{font-size:8px;line-height:1.45;color:var(--mid)}
+footer{padding:0 60px 28px}
+.footer-line{height:2px;background:var(--orange);margin-bottom:25px}
+.footer-nav{display:flex;gap:10px;align-items:center;font-size:10px;font-weight:600;margin-bottom:28px}
+.footer-nav a{color:var(--dark);text-decoration:none}
+.footer-nav span{color:#bbb}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:20px;align-items:start}
+.footer-top h4{font-size:10px;margin-bottom:7px}
+.footer-top p,.footer-top a{font-size:9px;line-height:1.5;color:var(--mid);text-decoration:none}
+.map{display:flex;justify-content:flex-end}
+.map img{width:220px;height:125px;object-fit:cover;object-position:center}
+.footer-bottom{border-top:1px solid var(--border);margin-top:24px;padding-top:14px;display:flex;justify-content:space-between;gap:15px}
+.footer-bottom a,.footer-bottom p{font-size:7px;color:var(--mid)}
+.wa{position:fixed;right:24px;bottom:22px;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 20px rgba(0,0,0,.2);text-decoration:none}
+.wa svg{width:29px;height:29px}
+@media(max-width:900px){
+.page{width:100%}
+nav{padding:0 24px}
+.nav-links{display:none}
+.nav-hamburger{display:flex}
+.header{padding:45px 24px 0}
+.header-grid{grid-template-columns:1fr;gap:20px}
+.hero{height:280px}
+section{padding:50px 24px}
+.fusion-img{height:300px}
+.wms{grid-template-columns:1fr}
+.wms-copy{padding:30px 0}
+.wms-photo{height:260px}
+.superport-grid{grid-template-columns:1fr}
+.explore-grid{grid-template-columns:1fr}
+footer{padding:0 24px 24px}
+.footer-top{grid-template-columns:1fr}
+.map{justify-content:flex-start}
+}
+@media(max-width:480px){
+h1{font-size:36px}
+.hero{height:220px}
+.fusion-img{height:230px}
+.wms-list{grid-template-columns:1fr}
+.cta-inner{height:220px}
+.cta-copy{padding:34px 24px}
+.explore-card img{height:170px}
+.footer-nav{flex-wrap:wrap}
+.footer-bottom{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<nav>
+<div class="nav-inner">
+<a class="logo" href="index.html"><img src="images/logo.webp" alt="YSG"></a>
+<div class="nav-links">
+<a href="index.html">HOME</a>
+<a href="our-services.html">OUR SERVICES</a>
+<a href="success-stories.html">SUCCESS STORIES</a>
+<a class="nav-cta" href="#contact">CONTACT US →</a>
+</div>
+<button class="nav-hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+<a href="index.html">HOME</a>
+<a href="our-services.html">OUR SERVICES</a>
+<a href="success-stories.html">SUCCESS STORIES</a>
+<a href="#contact">CONTACT US →</a>
+</div>
+<header class="header">
+<div class="breadcrumb">Home &nbsp;›&nbsp; Our Services &nbsp;›&nbsp; <span>Warehouse &amp; Fulfilment</span></div>
+<div class="header-grid">
+<h1>Warehouse &amp;<br>Fulfilment</h1>
+<div class="header-copy">YCH's B2C Warehouse Fulfilment solution provides end-to-end inventory management, order processing, packing, shipping, and return services, enabling brands to deliver fast, accurate, and seamless customer experiences across every sales channel.</div>
+</div>
+</header>
+<div class="hero"><img src="images/hero.webp" alt="Warehouse fulfilment operation"></div>
+<section class="fusion">
+<div class="fusion-img"><img src="images/fusionaris.webp" alt="Fusionaris facility"></div>
+<div class="wms">
+<div class="wms-copy">
+<h2 class="section-title">Warehouse Management<br>System (WMS)</h2>
+<p class="section-sub">Once orders are released from the OMS, our advanced Warehouse Management System orchestrates every warehouse operation with precision and accuracy.</p>
+<div class="wms-list">
+<div class="wms-item">Goods receiving and put-away</div>
+<div class="wms-item">FIFO/FEFO inventory control</div>
+<div class="wms-item">Wave, batch, or single-order picking</div>
+<div class="wms-item">Picking and packing inspection</div>
+<div class="wms-item">Shipping label generation</div>
+<div class="wms-item">Carrier integration and shipment confirmation</div>
+<div class="wms-item">Returns processing and inventory reconciliation</div>
+</div>
+<p class="section-sub">Barcode-driven workflows and real-time inventory tracking ensure high order accuracy while maximizing warehouse productivity.</p>
+</div>
+<div class="wms-photo"><img src="images/wms.webp" alt="Warehouse management system"></div>
+</div>
+</section>
+<section class="superport">
+<h2>VIETNAM SuperPort</h2>
+<div class="superport-intro">
+<p>With an investment of over US$270 million, Vietnam SuperPort™ is a transformative logistics infrastructure project—the largest of its kind led by a Singaporean company in Vietnam currently underway.</p>
+<br>
+<p>It aims to enhance Vietnam's integration into global supply chains, reduce logistics costs, and strengthen the country's competitive edge in international trade.</p>
+</div>
+<div class="superport-grid">
+<div class="card">
+<h3>Joint Venture Between YCH Group<br>(Singapore) and T&amp;T Group (Vietnam)</h3>
+<div class="jv-row">
+<img src="images/jv.webp" alt="Vietnam logistics facility">
+<p>YCH Group is Singapore's largest homegrown logistics supply chain solutions company.</p>
+</div>
+<div class="jv-row">
+<div style="width:90px;height:55px;background:#000;border-radius:2px"></div>
+<p>T&amp;T Group is among the top 10 largest private multi-sector economic groups in Vietnam.</p>
+</div>
+<p style="font-size:8px;color:#777;line-height:1.45;margin-top:10px">The project connects major logistics routes and strengthens regional distribution capabilities.</p>
+</div>
+<div class="card port-card">
+<h3>About Vietnam SuperPort™</h3>
+<img src="images/superport.webp" alt="Vietnam SuperPort masterplan">
+<ul>
+<li>68 ha multimodal logistics hub in Phu Tho province</li>
+<li>Designed cargo capacity of up to 1M TEUs</li>
+<li>Highly aligned with ASEAN Smart Logistics Network (ASLN)</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="cta">
+<div class="cta-inner">
+<div class="cta-copy">
+<h2>Ready to Grow<br>Your Business?</h2>
+<p>Let's explore how YSG can support your operations and e-commerce growth.</p>
+<a href="#contact">CONTACT US <span style="color:var(--orange)">→</span></a>
+</div>
+</div>
+</section>
+<section class="explore">
+<h2>Explore Others</h2>
+<div class="explore-grid">
+<div class="explore-card">
+<img src="images/enablement.webp" alt="Enablement">
+<h3>Enablement <span>→</span></h3>
+<p>Sustainable growth starts with a strong operational backbone. YSG manages end-to-end marketplace operations across Shopee, Lazada and TikTok Shop.</p>
+</div>
+<div class="explore-card">
+<img src="images/marketing.webp" alt="Marketing">
+<h3>Marketing <span>→</span></h3>
+<p>In today's competitive landscape, organic traffic alone is no longer enough. Brands need sharp, targeted marketing strategies to scale their online presence.</p>
+</div>
+<div class="explore-card">
+<img src="images/creative.webp" alt="Creative">
+<h3>Creative <span>→</span></h3>
+<p>First impressions win or lose the sale. Our in-house creative team produces high-converting digital assets crafted in close alignment with each brand's identity.</p>
+</div>
+</div>
+</section>
+<footer id="contact">
+<div class="footer-line"></div>
+<div class="footer-nav">
+<a href="enablement.html">Enablement</a><span>|</span>
+<a href="marketing.html">Marketing</a><span>|</span>
+<a href="creative.html">Creative</a><span>|</span>
+<a href="warehouse-fulfilment.html">Warehouse &amp; Fulfilment</a>
+</div>
+<div class="footer-top">
+<div>
+<h4>Contact us</h4>
+<a href="mailto:hello@ysg.asia">hello@ysg.asia</a><br>
+<a href="tel:+6567677777">+65 6767 7777</a>
+</div>
+<div>
+<h4>Supply Chain City</h4>
+<p>8 Bulim Avenue, #08-06,<br>Singapore 648166</p>
+</div>
+<div class="map"><img src="images/map.webp" alt="Southeast Asia coverage map"></div>
+</div>
+<div class="footer-bottom">
+<div><a href="https://ysg.asia/privacypolicy">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://ysg.asia/termsofuse">Terms of Use</a> &nbsp;|&nbsp; <a href="mailto:DPO@ysg.asia">For all PDPA matters contact here</a> &nbsp;|&nbsp; <a href="https://www.ych.com/">YCH Group</a></div>
+<p>© 2026 Y-SG Pte Ltd. All Rights Reserved.</p>
+</div>
+</footer>
+</div>
+<a class="wa" href="https://wa.me/6587868620?text=Hi%20YSG%2C%20I'd%20like%20to%20find%20out%20more%20about%20your%20Warehouse%20%26%20Fulfilment%20services." target="_blank" rel="noopener" aria-label="Chat with YSG on WhatsApp"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill="white" d="M16 3C9.373 3 4 8.373 4 15c0 2.385.668 4.61 1.832 6.5L4 29l7.75-1.813A12.94 12.94 0 0 0 16 28c6.627 0 12-5.373 12-12S22.627 3 16 3Zm0 22.5c-1.98 0-3.85-.54-5.455-1.48l-.39-.23-4.6 1.076 1.1-4.49-.255-.4A10.44 10.44 0 0 1 5.5 15C5.5 9.201 10.201 4.5 16 4.5S26.5 9.201 26.5 15 21.799 25.5 16 25.5Zm5.805-7.86c-.317-.158-1.878-.925-2.169-1.031-.292-.105-.504-.158-.715.158-.212.317-.82 1.031-.004 1.243-.252.106-.504.106-.715-.053-.212-.158-1.26-.463-2.4-1.47-.887-.787-1.485-1.76-1.66-2.076-.173-.317-.018-.488.13-.645.134-.143.317-.37.475-.555.158-.185.211-.317.317-.528.105-.212.053-.396-.026-.555-.08-.158-.716-1.72-.98-2.358-.259-.622-.521-.537-.716-.547l-.608-.01c-.212 0-.555.079-.845.396-.291.317-1.11 1.085-1.11 2.645s1.136 3.07 1.294 3.282c.158.211 2.234 3.41 5.413 4.782.757.326 1.347.52 1.807.666.76.24 1.453.207 2 .125.61-.091 1.878-.768 2.144-1.51.265-.74.265-1.374.186-1.51-.079-.132-.291-.211-.608-.37Z"/></svg></a>
+<script>
+const hamburger=document.getElementById('hamburger');
+const mobileNav=document.getElementById('mobileNav');
+hamburger.addEventListener('click',()=>mobileNav.classList.toggle('open'));
+mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileNav.classList.remove('open')));
+</script>
+</body>
+</html>
