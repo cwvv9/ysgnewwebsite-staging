@@ -122,10 +122,11 @@
   .superport-card.dark { background: linear-gradient(135deg, var(--navy), var(--purple)); border: none; color: #fff; }
   .superport-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 20px; color: var(--dark); }
   .superport-card.dark h3 { color: #fff; }
-  .superport-row { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .superport-row { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
   .superport-row:last-child { margin-bottom: 0; }
-  .superport-row .sp-thumb { width: 56px; height: 56px; border-radius: 8px; object-fit: cover; flex-shrink: 0; background: #d9d9d9; }
-  .superport-row p { font-size: 13px; color: var(--mid); line-height: 1.6; }
+  .superport-row .sp-thumb { width: 90px; height: 90px; border-radius: 8px; object-fit: cover; flex-shrink: 0; background: #d9d9d9; }
+  .superport-row .sp-text p { font-size: 13px; color: var(--mid); line-height: 1.6; margin-bottom: 10px; }
+  .superport-row .sp-text p:last-child { margin-bottom: 0; }
   .superport-card.dark img.sp-map { width: 100%; border-radius: 10px; margin-bottom: 20px; display: block; }
   .superport-card.dark ul { list-style: none; padding: 0; margin: 0; }
   .superport-card.dark ul li { position: relative; padding-left: 18px; font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.9); margin-bottom: 8px; }
@@ -362,20 +363,18 @@
       <div class="superport-card">
         <h3>Joint Venture Between YCH Group (Singapore) and T&amp;T Group (Vietnam)</h3>
         <div class="superport-row">
-          <img class="sp-thumb" src="images/vietnam-superport-ych-thumb.png" alt="YCH Group building">
-          <p>YCH Group is Singapore's largest homegrown logistics &amp; supply chain solutions company.</p>
+          <img class="sp-thumb" src="images/vietnam-superport-ych-building.png" alt="YCH Group building">
+          <div class="sp-text">
+            <p>YCH Group is Singapore's largest homegrown logistics &amp; supply chain solutions company.</p>
+            <p>Located across 15 markets, 100+ key cities including Northern and Southern parts of Vietnam.</p>
+          </div>
         </div>
         <div class="superport-row">
-          <img class="sp-thumb" src="images/vietnam-superport-ych-map-thumb.png" alt="YCH regional network map">
-          <p>Located across 15 markets, 100+ key cities including Northern and Southern parts of Vietnam.</p>
-        </div>
-        <div class="superport-row">
-          <img class="sp-thumb" src="images/vietnam-superport-tnt-thumb.png" alt="T&T Group logo">
-          <p>T&amp;T Group is amongst the top 10 largest private multi-sectoral economic groups in Vietnam.</p>
-        </div>
-        <div class="superport-row">
-          <img class="sp-thumb" src="images/vietnam-superport-tnt-employees-thumb.png" alt="T&T Group workforce">
-          <p>600 member companies with over 90,000 employees nationwide.</p>
+          <img class="sp-thumb" src="images/vietnam-superport-tnt-logo.png" alt="T&T Group logo">
+          <div class="sp-text">
+            <p>T&amp;T Group is amongst the top 10 largest private multi-sectoral economic groups in Vietnam.</p>
+            <p>600 member companies with over 90,000 employees nationwide.</p>
+          </div>
         </div>
       </div>
 
