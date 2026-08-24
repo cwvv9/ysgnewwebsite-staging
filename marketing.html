@@ -639,7 +639,7 @@
       // stretch each arrow exactly to the neighbouring card's border, no further
       const leftCardRect = ffmLeftCard.getBoundingClientRect();
       const rightCardRect = ffmRightCard.getBoundingClientRect();
-      const overshoot = 6; // extend a touch past the card border
+      const overshoot = 0; // stop exactly at the card border, no overlap
       const leftWidth = Math.max(0, (wrapRect.left - leftCardRect.right) + overshoot);
       const rightWidth = Math.max(0, (rightCardRect.left - wrapRect.right) + overshoot);
       ffmArrowLeft.style.width = leftWidth + 'px';
