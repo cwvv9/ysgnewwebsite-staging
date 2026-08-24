@@ -126,7 +126,7 @@
   .ffm-arrow { color: var(--border); font-size: 18px; letter-spacing: 2px; user-select: none; }
   .ffm-arrow svg { display: block; }
 
-  .ffm-body { display: grid; grid-template-columns: 1fr 140px 1fr; align-items: center; gap: 28px; }
+  .ffm-body { display: grid; grid-template-columns: 1fr 150px 1fr; align-items: center; gap: 20px; }
   .ffm-card { background: var(--light); border: 1px solid var(--border); border-radius: 14px; padding: 26px 26px; text-align: left; min-height: 260px; transition: box-shadow 0.25s; }
   .ffm-card-label { font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
   .ffm-card-title { font-size: 18px; font-weight: 800; color: var(--dark); margin-bottom: 14px; line-height: 1.3; min-height: 47px; }
@@ -136,20 +136,24 @@
   .ffm-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
   .ffm-badges span { background: var(--orange); color: var(--white); font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 999px; }
 
-  .ffm-funnel-wrap { position: relative; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
-  .ffm-seg { width: 100%; height: 44px; background: #D1D5DB; transition: background 0.3s; clip-path: polygon(6% 0, 94% 0, 100% 100%, 0% 100%); }
+  .ffm-funnel-wrap { position: relative; height: 200px; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; overflow: visible; z-index: 1; }
+  .ffm-seg { width: 100%; height: 44px; background: #D1D5DB; transition: background 0.3s, width 0.3s; clip-path: polygon(6% 0, 94% 0, 100% 100%, 0% 100%); }
   .ffm-seg[data-idx="2"] { width: 78%; }
   .ffm-seg[data-idx="3"] { width: 56%; }
   .ffm-seg.active { background: var(--orange); }
-  .ffm-seg-arrow { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; transform: translateY(-50%); pointer-events: none; transition: top 0.3s; }
-  .ffm-seg-arrow .line { flex: 1; border-top: 2px dashed var(--orange); margin-top: 1px; position: relative; }
-  .ffm-seg-arrow .line.left::before, .ffm-seg-arrow .line.right::after {
-    content: ''; position: absolute; top: -4px; width: 0; height: 0;
-    border-top: 4px solid transparent; border-bottom: 4px solid transparent;
+
+  /* dashed connector arrows reaching out from the active segment toward each card */
+  .ffm-arrow-line { position: absolute; top: 0; height: 0; border-top: 2px dashed var(--orange); pointer-events: none; transition: top 0.3s, width 0.3s; }
+  .ffm-arrow-line.left { right: 100%; width: 92px; }
+  .ffm-arrow-line.right { left: 100%; width: 92px; }
+  .ffm-arrow-line.left::after {
+    content: ''; position: absolute; left: -1px; top: -4px; width: 0; height: 0;
+    border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-right: 6px solid var(--orange);
   }
-  .ffm-seg-arrow .line.left::before { left: -2px; border-right: 6px solid var(--orange); }
-  .ffm-seg-arrow .line.right::after { right: -2px; border-left: 6px solid var(--orange); }
-  .ffm-seg-arrow .gap { width: 60px; }
+  .ffm-arrow-line.right::after {
+    content: ''; position: absolute; right: -1px; top: -4px; width: 0; height: 0;
+    border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 6px solid var(--orange);
+  }
 
   @media (max-width: 900px) {
     .ffm-body { grid-template-columns: 1fr; }
@@ -158,7 +162,7 @@
     .ffm-card:last-of-type { order: 3; }
     .ffm-tabs { gap: 8px; }
     .ffm-tab { font-size: 13px; padding: 9px 16px; }
-    .ffm-seg-arrow { display: none; }
+    .ffm-arrow-line { display: none; }
   }
 
   /* ── EXPLORE OTHERS ── */
@@ -443,11 +447,8 @@
         <div class="ffm-seg" data-idx="1"></div>
         <div class="ffm-seg" data-idx="2"></div>
         <div class="ffm-seg" data-idx="3"></div>
-        <div class="ffm-seg-arrow" id="ffmSegArrow">
-          <div class="line left"></div>
-          <div class="gap"></div>
-          <div class="line right"></div>
-        </div>
+        <div class="ffm-arrow-line left" id="ffmArrowLeft"></div>
+        <div class="ffm-arrow-line right" id="ffmArrowRight"></div>
       </div>
 
       <div class="ffm-card">
@@ -607,7 +608,8 @@
   const ffmRightTitle = document.getElementById('ffmRightTitle');
   const ffmRightBadges = document.getElementById('ffmRightBadges');
   const ffmRightList = document.getElementById('ffmRightList');
-  const ffmSegArrow = document.getElementById('ffmSegArrow');
+  const ffmArrowLeft = document.getElementById('ffmArrowLeft');
+  const ffmArrowRight = document.getElementById('ffmArrowRight');
   const ffmFunnelWrap = document.querySelector('.ffm-funnel-wrap');
 
   function renderFfmStage(stage) {
@@ -628,7 +630,8 @@
       const wrapRect = ffmFunnelWrap.getBoundingClientRect();
       const segRect = activeSeg.getBoundingClientRect();
       const top = (segRect.top - wrapRect.top) + (segRect.height / 2);
-      ffmSegArrow.style.top = top + 'px';
+      ffmArrowLeft.style.top = top + 'px';
+      ffmArrowRight.style.top = top + 'px';
     }
   }
 
