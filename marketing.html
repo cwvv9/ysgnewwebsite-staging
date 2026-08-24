@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -142,9 +143,9 @@
   .ffm-seg-path.active { fill: var(--orange); }
 
   /* dashed connector arrows reaching out from the active segment toward each card */
-  .ffm-arrow-line { position: absolute; top: 0; height: 0; border-top: 2px dashed var(--orange); pointer-events: none; transition: top 0.3s, left 0.3s, right 0.3s; }
-  .ffm-arrow-line.left { right: 100%; width: 46px; }
-  .ffm-arrow-line.right { left: 100%; width: 46px; }
+  .ffm-arrow-line { position: absolute; top: 0; height: 0; border-top: 2px dashed var(--orange); pointer-events: none; transition: top 0.3s, width 0.3s; }
+  .ffm-arrow-line.left { right: 100%; }
+  .ffm-arrow-line.right { left: 100%; }
   .ffm-arrow-line.left::after {
     content: ''; position: absolute; left: -1px; top: -4px; width: 0; height: 0;
     border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-right: 6px solid var(--orange);
@@ -436,7 +437,7 @@
     </div>
 
     <div class="ffm-body">
-      <div class="ffm-card">
+      <div class="ffm-card" id="ffmLeftCard">
         <div class="ffm-card-label">Onsite Market Place</div>
         <h3 class="ffm-card-title" id="ffmLeftTitle"></h3>
         <ul class="ffm-card-list" id="ffmLeftList"></ul>
@@ -452,7 +453,7 @@
         <div class="ffm-arrow-line right" id="ffmArrowRight"></div>
       </div>
 
-      <div class="ffm-card">
+      <div class="ffm-card" id="ffmRightCard">
         <div class="ffm-card-label">Social Media Marketing</div>
         <h3 class="ffm-card-title" id="ffmRightTitle"></h3>
         <div class="ffm-badges" id="ffmRightBadges"></div>
@@ -612,6 +613,8 @@
   const ffmArrowLeft = document.getElementById('ffmArrowLeft');
   const ffmArrowRight = document.getElementById('ffmArrowRight');
   const ffmFunnelWrap = document.querySelector('.ffm-funnel-wrap');
+  const ffmLeftCard = document.getElementById('ffmLeftCard');
+  const ffmRightCard = document.getElementById('ffmRightCard');
 
   function renderFfmStage(stage) {
     const data = ffmData[stage];
@@ -633,6 +636,14 @@
       const top = (segRect.top - wrapRect.top) + (segRect.height / 2);
       ffmArrowLeft.style.top = top + 'px';
       ffmArrowRight.style.top = top + 'px';
+
+      // stretch each arrow exactly to the neighbouring card's border, no further
+      const leftCardRect = ffmLeftCard.getBoundingClientRect();
+      const rightCardRect = ffmRightCard.getBoundingClientRect();
+      const leftWidth = Math.max(0, wrapRect.left - leftCardRect.right);
+      const rightWidth = Math.max(0, rightCardRect.left - wrapRect.right);
+      ffmArrowLeft.style.width = leftWidth + 'px';
+      ffmArrowRight.style.width = rightWidth + 'px';
     }
   }
 
