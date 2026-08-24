@@ -126,7 +126,7 @@
   .ffm-arrow { color: var(--border); font-size: 18px; letter-spacing: 2px; user-select: none; }
   .ffm-arrow svg { display: block; }
 
-  .ffm-body { display: grid; grid-template-columns: 1fr 150px 1fr; align-items: center; gap: 20px; }
+  .ffm-body { display: grid; grid-template-columns: 1fr 180px 1fr; align-items: center; gap: 24px; }
   .ffm-card { background: var(--light); border: 1px solid var(--border); border-radius: 14px; padding: 26px 26px; text-align: left; min-height: 260px; transition: box-shadow 0.25s; }
   .ffm-card-label { font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
   .ffm-card-title { font-size: 18px; font-weight: 800; color: var(--dark); margin-bottom: 14px; line-height: 1.3; min-height: 47px; }
@@ -136,16 +136,15 @@
   .ffm-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
   .ffm-badges span { background: var(--orange); color: var(--white); font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 999px; }
 
-  .ffm-funnel-wrap { position: relative; height: 200px; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; overflow: visible; z-index: 1; }
-  .ffm-seg { width: 100%; height: 44px; background: #D1D5DB; transition: background 0.3s, width 0.3s; clip-path: polygon(6% 0, 94% 0, 100% 100%, 0% 100%); }
-  .ffm-seg[data-idx="2"] { width: 78%; }
-  .ffm-seg[data-idx="3"] { width: 56%; }
-  .ffm-seg.active { background: var(--orange); }
+  .ffm-funnel-wrap { position: relative; height: 200px; width: 100%; display: flex; align-items: center; justify-content: center; overflow: visible; z-index: 1; }
+  .ffm-funnel-svg { display: block; overflow: visible; }
+  .ffm-seg-path { fill: #D1D5DB; transition: fill 0.3s; }
+  .ffm-seg-path.active { fill: var(--orange); }
 
   /* dashed connector arrows reaching out from the active segment toward each card */
-  .ffm-arrow-line { position: absolute; top: 0; height: 0; border-top: 2px dashed var(--orange); pointer-events: none; transition: top 0.3s, width 0.3s; }
-  .ffm-arrow-line.left { right: 100%; width: 92px; }
-  .ffm-arrow-line.right { left: 100%; width: 92px; }
+  .ffm-arrow-line { position: absolute; top: 0; height: 0; border-top: 2px dashed var(--orange); pointer-events: none; transition: top 0.3s, left 0.3s, right 0.3s; }
+  .ffm-arrow-line.left { right: 100%; width: 46px; }
+  .ffm-arrow-line.right { left: 100%; width: 46px; }
   .ffm-arrow-line.left::after {
     content: ''; position: absolute; left: -1px; top: -4px; width: 0; height: 0;
     border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-right: 6px solid var(--orange);
@@ -444,9 +443,11 @@
       </div>
 
       <div class="ffm-funnel-wrap">
-        <div class="ffm-seg" data-idx="1"></div>
-        <div class="ffm-seg" data-idx="2"></div>
-        <div class="ffm-seg" data-idx="3"></div>
+        <svg class="ffm-funnel-svg" width="180" height="170" viewBox="0 0 180 170" xmlns="http://www.w3.org/2000/svg">
+          <path class="ffm-seg-path" data-idx="1" d="M6,0 L174,0 L152,50 L28,50 Z"></path>
+          <path class="ffm-seg-path" data-idx="2" d="M28,54 L152,54 L134,108 L46,108 Z"></path>
+          <path class="ffm-seg-path" data-idx="3" d="M46,112 L134,112 L118,166 L62,166 Z"></path>
+        </svg>
         <div class="ffm-arrow-line left" id="ffmArrowLeft"></div>
         <div class="ffm-arrow-line right" id="ffmArrowRight"></div>
       </div>
@@ -602,7 +603,7 @@
   };
 
   const ffmTabs = document.querySelectorAll('.ffm-tab');
-  const ffmSegs = document.querySelectorAll('.ffm-seg');
+  const ffmSegs = document.querySelectorAll('.ffm-seg-path');
   const ffmLeftTitle = document.getElementById('ffmLeftTitle');
   const ffmLeftList = document.getElementById('ffmLeftList');
   const ffmRightTitle = document.getElementById('ffmRightTitle');
@@ -625,7 +626,7 @@
     ffmRightBadges.innerHTML = data.right.badges.map(b => `<span>${b}</span>`).join('');
     ffmRightList.innerHTML = data.right.points.map(p => `<li>${p}</li>`).join('');
 
-    const activeSeg = document.querySelector('.ffm-seg[data-idx="' + stage + '"]');
+    const activeSeg = document.querySelector('.ffm-seg-path[data-idx="' + stage + '"]');
     if (activeSeg && ffmFunnelWrap) {
       const wrapRect = ffmFunnelWrap.getBoundingClientRect();
       const segRect = activeSeg.getBoundingClientRect();
