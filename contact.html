@@ -25,27 +25,27 @@
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; }
 
-  /* ── NAV ── */
+  /* ── NAV (matches about.html) ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: center;
     padding: 0 48px; height: 68px;
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
+    background: rgba(26,39,68,0.92); backdrop-filter: blur(10px);
     transition: background 0.3s;
   }
   .nav-inner { width: 100%; max-width: 1200px; display: flex; align-items: center; justify-content: space-between; }
   nav .logo img { height: 36px; }
   nav .nav-links { display: flex; align-items: center; gap: 32px; }
-  nav .nav-links a { color: var(--dark); text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 0.3px; transition: color 0.2s; }
-  nav .nav-links a:hover, nav .nav-links a.active { color: var(--orange); }
-  nav .nav-cta { background: var(--orange); color: var(--white) !important; padding: 10px 22px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; transition: background 0.2s; }
-  nav .nav-cta:hover { background: #d96a10; color: var(--white) !important; }
+  nav .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+  nav .nav-links a:hover, nav .nav-links a.active { color: var(--white); }
+  nav .nav-links a.active { border-bottom: 2px solid var(--orange); padding-bottom: 4px; }
+  nav .nav-cta { background: var(--orange); color: var(--white); padding: 10px 22px; border-radius: 6px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+  nav .nav-cta:hover { background: #d96a10; }
   .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-  .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); border-radius: 2px; }
-  .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 99; background: var(--white); border-bottom: 1px solid var(--border); flex-direction: column; padding: 24px 32px; gap: 20px; }
+  .nav-hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; }
+  .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 99; background: rgba(26,39,68,0.98); backdrop-filter: blur(10px); flex-direction: column; padding: 24px 32px; gap: 20px; }
   .mobile-nav.open { display: flex; }
-  .mobile-nav a { color: var(--dark); text-decoration: none; font-size: 16px; font-weight: 600; padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .mobile-nav a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 16px; font-weight: 500; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .mobile-nav a:last-child { border-bottom: none; color: var(--orange); font-weight: 700; }
 
   /* ── PAGE HEADER (navy hero) ── */
@@ -180,10 +180,9 @@
   <div class="nav-inner">
     <div class="logo"><img src="images/logo_1.png" alt="YSG"></div>
     <div class="nav-links">
+      <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
-      <a href="services.html">Our Services</a>
-      <a href="success-stories.html">Success Stories</a>
-      <a href="contact.html" class="nav-cta active">Contact Us →</a>
+      <a href="#contact" class="nav-cta">Contact Us →</a>
     </div>
     <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -191,10 +190,9 @@
   </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
   <a href="about.html">About Us</a>
-  <a href="services.html">Our Services</a>
-  <a href="success-stories.html">Success Stories</a>
-  <a href="contact.html">Contact Us →</a>
+  <a href="#contact">Contact Us →</a>
 </div>
 
 <!-- HERO -->
