@@ -115,8 +115,16 @@
   .tech-box.marketplaces { background: var(--white); border: 1px solid var(--dark); }
   .tech-box.marketplaces h5 { color: var(--navy); }
   .tech-box.marketplaces .desc { color: var(--mid); }
-  .tech-connector { width: 0; height: 26px; margin: 0 auto; border-left: 2px dotted var(--orange); position: relative; }
-  .tech-connector::after { content: ''; position: absolute; left: -4px; bottom: -1px; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 6px solid var(--orange); }
+.tech-connector {
+  width: 2px; height: 28px; margin: 0 auto; position: relative;
+  background: repeating-linear-gradient(to bottom, var(--orange) 0, var(--orange) 3px, transparent 3px, transparent 7px);
+}
+.tech-connector::after {
+  content: ''; position: absolute; left: 50%; transform: translateX(-50%); bottom: -1px;
+  width: 0; height: 0;
+  border-left: 5px solid transparent; border-right: 5px solid transparent;
+  border-top: 7px solid var(--orange);
+}
   .tech-box.oms { background: var(--orange); }
   .tech-box.oms h5 { color: var(--white); }
   .tech-box.oms .desc { color: rgba(255,255,255,0.88); }
