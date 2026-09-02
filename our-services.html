@@ -120,6 +120,9 @@
   .tech-box.oms { background: var(--orange); }
   .tech-box.oms h5 { color: var(--white); }
   .tech-box.oms .desc { color: rgba(255,255,255,0.88); }
+  .tech-box.oms .desc-list { list-style: none; text-align: left; margin: 0; padding: 0; columns: 2; column-gap: 22px; }
+  .tech-box.oms .desc-list li { position: relative; padding-left: 14px; font-size: 11.5px; line-height: 1.7; color: rgba(255,255,255,0.92); break-inside: avoid; }
+  .tech-box.oms .desc-list li::before { content: '•'; position: absolute; left: 0; color: rgba(255,255,255,0.85); }
   .wms-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .tech-box.wms { background: var(--white); border: 1px solid var(--dark); }
   .tech-box.wms h5 { color: var(--navy); }
@@ -133,6 +136,7 @@
   @media (max-width: 700px) {
     .wms-row, .client-row { grid-template-columns: 1fr; }
     .tech-diagram-frame { padding: 20px; }
+    .tech-box.oms .desc-list { columns: 1; }
   }
 
   /* ── BRANDS ── */
@@ -314,18 +318,16 @@
 
 <!-- CREATIVE -->
 <div class="feature-row alt">
-  <div class="feature-inner">
-    <div class="feature-media"><img src="images/service-creative.png" alt="YSG creative content shoot"></div>
-    <div class="feature-text">
-      <h3>Creative</h3>
-      <p>Every customer interaction shapes a buying decision. Our in-house creative team develops impactful brand and commerce assets that elevate visibility, strengthen brand consistency, and maximize conversion across every channel.</p>
-      <div class="marketplace-badges">
-        <div class="badge"><img src="images/ysg-shopee-partner.webp" alt="Shopee"></div>
-        <div class="badge"><img src="images/ysg-lazada-partner.webp" alt="Lazada"></div>
-        <div class="badge"><img src="images/ysg-tiktok-partner.webp" alt="TikTok Shop"></div>
-      </div>
-      <a href="creative.html" class="feature-btn">Find out more →</a>
+  <div class="feature-media"><img src="images/service-creative.png" alt="YSG creative content shoot"></div>
+  <div class="feature-text">
+    <h3>Creative</h3>
+    <p>Every customer interaction shapes a buying decision. Our in-house creative team develops impactful brand and commerce assets that elevate visibility, strengthen brand consistency, and maximize conversion across every channel.</p>
+    <div class="marketplace-badges">
+      <div class="badge"><img src="images/ysg-shopee-partner.webp" alt="Shopee"></div>
+      <div class="badge"><img src="images/ysg-lazada-partner.webp" alt="Lazada"></div>
+      <div class="badge"><img src="images/ysg-tiktok-partner.webp" alt="TikTok Shop"></div>
     </div>
+    <a href="creative.html" class="feature-btn">Find out more →</a>
   </div>
 </div>
 
@@ -356,7 +358,19 @@
         <div class="tech-connector"></div>
         <div class="tech-box oms">
           <h5>OMS (Order Management System)</h5>
-          <div class="desc">Acts as the central order orchestration layer, covering Order Receiving, Safety Stock Configuration, Order Status Updates, SoftKitting, Order Processing & Routing, Campaign Mode, SKU / Product Mapping, Channel Stock Allocations, GWP Settings & Rules, Inventory Sync, and Returns & Cancellation Handling. It coordinates incoming orders, applies business rules, allocates inventory, manages product and campaign requirements, synchronises stock and order statuses, and controls returns and cancellations across sales channels.</div>
+          <ul class="desc-list">
+            <li>Order Receiving (from Marketplace)</li>
+            <li>Order Processing & Routing</li>
+            <li>GWP (Gift with Purchase) Settings & Rules</li>
+            <li>Safety Stock Configuration</li>
+            <li>Campaign Mode</li>
+            <li>Inventory Sync (push to Marketplace)</li>
+            <li>Order Status Updates</li>
+            <li>SKU / Product Mapping</li>
+            <li>Returns & Cancellations Handling</li>
+            <li>SoftKitting</li>
+            <li>Channel Stock Allocations</li>
+          </ul>
         </div>
         <div class="tech-connector"></div>
         <div class="wms-row">
