@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Services – Digital Commerce & Omnichannel Solutions Singapore | YSG</title>
-<meta name="description" content="End-to-end solutions that empower brands to grow, scale, and succeed across Asia — Enablement, Warehouse & Fulfilment, Digital Marketing, and Creative, all under one roof at YSG.">
+<title>Our Services – Digital Commerce & Omnichannel Solutions Singapore</title>
+<meta name="description" content="YSG delivers end-to-end digital commerce solutions — Enablement, Digital Marketing, Creative, and Warehouse & Fulfilment — powered by one integrated technology stack.">
 <link rel="canonical" href="https://www.ysg.asia/our-services">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -26,7 +25,6 @@
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; }
 
-  /* ── NAV ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: center;
@@ -49,59 +47,102 @@
   .mobile-nav a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 16px; font-weight: 500; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .mobile-nav a:last-child { border-bottom: none; color: var(--orange); font-weight: 700; }
 
-  /* ── PAGE HEADER (about-style) ── */
-  .page-header { padding: 128px calc((100% - 1200px) / 2) 40px; }
-  .breadcrumb { font-size: 13px; color: var(--mid); margin-bottom: 24px; }
-  .breadcrumb a { color: var(--mid); text-decoration: none; }
-  .breadcrumb span { color: var(--dark); font-weight: 600; }
-  .page-header-inner { display: flex; justify-content: space-between; align-items: center; gap: 40px; flex-wrap: wrap; }
-  .page-title { font-size: clamp(36px, 4vw, 48px); font-weight: 800; color: var(--navy); }
-  .page-title span { color: var(--orange); }
-  .page-header-text { max-width: 620px; }
-  .page-header-text p { white-space: nowrap; }
-
-  .services-hero-img { width: 100%; margin: 0 0 30px; padding: 0; }
-  .services-hero-img img { width: 100%; height: 460px; object-fit: cover; border-radius: 0; display: block; }
-
-  /* ── SECTION COMMONS ── */
-  section { padding: 80px calc((100% - 1200px) / 2); }
-  @media (max-width: 1328px) {
-    section { padding: 80px 64px; }
-    .page-header { padding-left: 64px; padding-right: 64px; }
+  /* ── HERO ── */
+  .services-hero {
+    position: relative; margin-top: 68px; min-height: 460px;
+    background: linear-gradient(120deg, rgba(15,22,44,0.96) 0%, rgba(20,30,58,0.88) 45%, rgba(20,30,58,0.55) 100%),
+                url('images/hero-city-services.png') center right / cover no-repeat;
+    display: flex; align-items: center;
+    padding: 64px calc((100% - 1200px) / 2);
   }
-  .section-title { font-size: clamp(28px, 3vw, 40px); font-weight: 800; color: var(--navy); line-height: 1.2; }
+  @media (max-width: 1328px) { .services-hero { padding: 64px 64px; } }
+  .services-hero-inner { max-width: 560px; position: relative; z-index: 2; }
+  .breadcrumb-light { font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 20px; }
+  .breadcrumb-light a { color: rgba(255,255,255,0.55); text-decoration: none; }
+  .breadcrumb-light span { color: var(--white); font-weight: 600; }
+  .services-hero h1 { font-size: clamp(34px, 4vw, 46px); font-weight: 800; color: var(--white); line-height: 1.15; }
+  .services-hero h1 span { color: var(--orange); }
+  .services-hero p { font-size: 15px; color: rgba(255,255,255,0.72); line-height: 1.75; margin-top: 18px; max-width: 460px; }
+
+  section { padding: 80px calc((100% - 1200px) / 2); }
+  @media (max-width: 1328px) { section { padding: 80px 64px; } }
+  .section-wrap { max-width: 1200px; margin: 0 auto; }
+  .section-title { font-size: clamp(28px, 3vw, 40px); font-weight: 800; color: var(--navy); line-height: 1.2; text-align: center; }
   .section-title span { color: var(--orange); }
-  .section-sub { font-size: 15px; color: var(--mid); margin-top: 14px; line-height: 1.7; max-width: 460px; }
+  .section-sub { font-size: 15px; color: var(--mid); margin-top: 14px; line-height: 1.7; text-align: center; max-width: 720px; margin-left: auto; margin-right: auto; }
 
-  /* ── SERVICES LAYOUT (left copy+image / right stacked cards) ── */
-  .services-cap { background: var(--white); }
-  .services-cap-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-  .services-cap-left .laptop-mock { margin-top: 40px; }
-  .services-cap-left .laptop-mock img { width: 100%; max-width: 380px; height: auto; display: block; }
-  .services-cap-right { display: flex; flex-direction: column; gap: 24px; }
-  .cap-card-link { display: block; border-radius: 12px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
-  .cap-card-link:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(20,20,40,0.18); }
-  .cap-card { border-radius: 12px; overflow: hidden; position: relative; }
-  .cap-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
-  .cap-card .cap-overlay { position: absolute; left: 0; right: 0; bottom: 0; padding: 20px 22px; background: linear-gradient(to top, rgba(10,15,30,0.88) 0%, rgba(10,15,30,0.55) 55%, rgba(10,15,30,0) 100%); }
-  .cap-card .cap-overlay h3 { font-size: 17px; font-weight: 700; color: var(--white); display: flex; align-items: center; gap: 6px; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.25); }
-  .cap-card .cap-overlay h3::after { content: '→'; color: var(--orange); font-size: 15px; margin-left: auto; }
-  .cap-card .cap-overlay p { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.6; }
-  /* ── BRANDS (from index.html) ── */
-  .brands { background: var(--white); }
-  .brands-inner { max-width: 1200px; margin: 0 auto; }
-  .brands-header { text-align: center; margin-bottom: 40px; }
-  .brands-header .section-title { font-size: 32px; }
-  .brands-header p { color: var(--mid); font-size: 15px; margin-top: 10px; }
-  .brands-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px 40px; align-items: center; }
-  .brands-grid img { height: 36px; object-fit: contain; filter: grayscale(20%); transition: filter 0.2s, transform 0.2s; }
-  .brands-grid img:hover { filter: grayscale(0%); transform: scale(1.05); }
-  .brands-cats { display: flex; justify-content: center; gap: 24px; margin-top: 32px; flex-wrap: wrap; }
-  .brands-cats span { font-size: 12px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--mid); cursor: pointer; padding: 6px 0; border-bottom: 2px solid transparent; transition: all 0.2s; }
-  .brands-cats span:hover { color: var(--mid); }
-  .brands-cats .brands-sep { color: var(--border); font-size: 14px; cursor: default; padding: 0; letter-spacing: 0; font-weight: 400; }
+  /* ── CAPABILITIES ── */
+  .capabilities { background: var(--white); }
+  .capabilities-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+  .capability-card { text-align: center; padding: 28px 18px; border-right: 1px solid var(--border); }
+  .capability-card:last-child { border-right: none; }
+  .capability-icon { width: 48px; height: 48px; margin: 0 auto 18px; display: flex; align-items: center; justify-content: center; }
+  .capability-icon svg { width: 36px; height: 36px; }
+  .capability-card h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .capability-card p { font-size: 12.5px; color: var(--mid); line-height: 1.65; }
+  @media (max-width: 900px) {
+    .capabilities-grid { grid-template-columns: 1fr 1fr; }
+    .capability-card { border-right: none; border-bottom: 1px solid var(--border); }
+  }
 
-  /* ── CTA BANNER ── */
+  /* ── FEATURE ROWS ── */
+  .feature-row { background: var(--white); padding: 56px calc((100% - 1200px) / 2); }
+  @media (max-width: 1328px) { .feature-row { padding: 56px 64px; } }
+  .feature-row.alt { background: var(--light); }
+  .feature-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .feature-row.reverse .feature-inner { direction: rtl; }
+  .feature-row.reverse .feature-inner > * { direction: ltr; }
+  .feature-media img { width: 100%; height: 340px; object-fit: cover; border-radius: 12px; display: block; }
+  .feature-text h3 { font-size: clamp(22px, 2.4vw, 28px); font-weight: 800; color: var(--navy); margin-bottom: 14px; }
+  .feature-text p { font-size: 14.5px; color: var(--mid); line-height: 1.75; margin-bottom: 22px; }
+  .feature-logos { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; margin-bottom: 26px; }
+  .feature-logos img { height: 22px; object-fit: contain; }
+  .feature-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--navy); color: var(--white); padding: 12px 24px; border-radius: 6px; font-size: 13.5px; font-weight: 700; text-decoration: none; transition: background 0.2s; }
+  .feature-btn:hover { background: var(--orange); }
+  @media (max-width: 900px) {
+    .feature-inner, .feature-row.reverse .feature-inner { grid-template-columns: 1fr; direction: ltr; }
+    .feature-media img { height: 220px; }
+    .feature-row.reverse .feature-inner .feature-media { order: -1; }
+  }
+
+  /* ── TECHNOLOGY DIAGRAM ── */
+  .tech-section { background: var(--light); text-align: center; }
+  .tech-diagram-frame { max-width: 900px; margin: 56px auto 0; border: 1.5px dashed #F4A05F; border-radius: 14px; background: var(--light); padding: 28px; }
+  .tech-diagram { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .tech-box { border-radius: 10px; padding: 18px 26px; text-align: left; }
+  .tech-box h5 { font-size: 14.5px; font-weight: 700; text-align: center; margin-bottom: 10px; }
+  .tech-box .desc { font-size: 11.5px; font-weight: 400; line-height: 1.7; text-align: center; }
+  .tech-box.marketplaces { background: var(--white); border: 1px solid var(--dark); }
+  .tech-box.marketplaces h5 { color: var(--navy); }
+  .tech-box.marketplaces .desc { color: var(--mid); }
+  .tech-connector { width: 0; height: 26px; margin: 0 auto; border-left: 2px dotted var(--orange); position: relative; }
+  .tech-connector::before, .tech-connector::after { content: ''; position: absolute; left: -3px; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; }
+  .tech-connector::before { top: -1px; border-top: 5px solid var(--orange); }
+  .tech-connector::after { bottom: -1px; border-bottom: 5px solid var(--orange); }
+  .tech-box.oms { background: var(--orange); }
+  .tech-box.oms h5 { color: var(--white); }
+  .tech-box.oms .desc { color: rgba(255,255,255,0.88); }
+  .wms-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .tech-box.wms { background: var(--white); border: 1px solid var(--dark); }
+  .tech-box.wms h5 { color: var(--navy); }
+  .tech-box.wms .desc { color: var(--mid); }
+  .tech-box.api { background: var(--navy); max-width: 220px; margin: 0 auto; padding: 14px 20px; }
+  .tech-box.api h5 { color: var(--white); margin-bottom: 0; }
+  .client-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .tech-box.client { background: var(--white); color: var(--dark); border: 1px dashed var(--orange); font-size: 12.5px; }
+  .tech-box.client h5 { color: var(--navy); }
+  .tech-box.client .desc { color: var(--mid); text-align: left; }
+  @media (max-width: 700px) {
+    .wms-row, .client-row { grid-template-columns: 1fr; }
+    .tech-diagram-frame { padding: 20px; }
+  }
+
+  /* ── BRANDS ── */
+  .brands { background: var(--light); text-align: center; }
+  .brands-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 36px 52px; margin-top: 44px; }
+  .brands-grid img { height: 34px; object-fit: contain; filter: grayscale(15%); }
+
+  /* ── CTA ── */
   .cta-banner { background: var(--white); padding: 0 0 60px 0; display: flex; justify-content: center; }
   .cta-banner-inner { position: relative; width: 100%; max-width: 1200px; min-height: 260px; display: flex; align-items: center; background: url('images/cta-bg.png') center center / cover no-repeat; border-radius: 0px; overflow: hidden; }
   .cta-banner-inner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(30,15,70,0.90) 45%, rgba(30,15,70,0.05) 100%); }
@@ -111,7 +152,6 @@
   .cta-banner a.cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--white); border: 2px solid var(--white); color: var(--dark); padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.2s; }
   .cta-banner a.cta-btn:hover { background: var(--light); border-color: var(--light); }
 
-  /* ── FOOTER ── */
   footer { background: var(--white); padding: 0 64px 28px; }
   .footer-inner { max-width: 1200px; margin: 0 auto; }
   .footer-nav-bar { display: flex; gap: 8px; align-items: center; padding-bottom: 28px; margin-bottom: 28px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
@@ -147,15 +187,12 @@
   @keyframes wa-pop { 0% { transform: scale(0); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
 
   @media (max-width: 900px) {
-   .page-header-text p { white-space: normal; }
     nav { padding: 0 24px; }
     nav .nav-links { display: none; }
     .nav-hamburger { display: flex; }
     section { padding: 60px 24px; }
-    .page-header { padding: 100px 24px 0; }
-    .services-hero-img img { margin-top: 25px; height: 260px; }
-    .services-cap-inner { grid-template-columns: 1fr; gap: 40px; }
-    .services-cap-left .laptop-mock { display: none; }
+    .services-hero { padding: 48px 24px; min-height: 380px; }
+    .feature-row { padding: 48px 24px; }
     .footer-top { grid-template-columns: 1fr; gap: 24px; }
     .footer-map-col img { width: 100% !important; max-width: 100% !important; }
     footer { padding: 0 24px 28px; }
@@ -165,24 +202,17 @@
     .wa-btn { width: 52px; height: 52px; }
     .wa-btn::before { width: 52px; height: 52px; }
   }
-  @media (max-width: 480px) {
-    .cap-card img { height: 180px; }
-    .brands-grid { gap: 20px 28px; }
-    .brands-grid img { height: 24px; }
-  }
 </style>
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
-    <!-- <div class="logo"><img src="images/logo_1.png" alt="YSG"></div> -->
-    <div class="logo"><a href="index.html"><img src="images/logo_1.png" alt="YSG"></a></div>
+    <div class="logo"><img src="images/logo_1.png" alt="YSG"></div>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
       <a href="our-services.html" class="active">Our Services</a>
-      <!-- <a href="success-stories.html">Success Stories</a> -->
       <a href="#contact" class="nav-cta">Contact Us →</a>
     </div>
     <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
@@ -192,121 +222,197 @@
 </nav>
 <div class="mobile-nav" id="mobileNav">
   <a href="index.html">Home</a>
-  <a href="about.html" onclick="document.getElementById('mobileNav').classList.remove('open')">About Us</a>
+  <a href="about.html">About Us</a>
   <a href="our-services.html">Our Services</a>
-  <!-- <a href="success-stories.html">Success Stories</a> -->
   <a href="#contact">Contact Us →</a>
 </div>
 
-<div class="page-header">
-  <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;›&nbsp; <span>Our Services</span></div>
-  <div class="page-header-inner">
-    <h1 class="page-title">Our <span>Services</span></h1>
-    <div class="page-header-text">
-      <p>End-to-end solutions that empower brands to grow, scale, and succeed across Asia.</p>
-    </div>
+<!-- HERO -->
+<div class="services-hero">
+  <div class="services-hero-inner">
+    <div class="breadcrumb-light"><a href="index.html">Home</a> &nbsp;›&nbsp; <span>Our Services</span></div>
+    <h1>Our <span>Services</span></h1>
+    <p>End-to-end solutions that empower brands to grow, scale, and succeed across Asia.</p>
   </div>
 </div>
 
-<div class="services-hero-img">
-  <img src="images/services-hero-team.png" alt="YSG team collaborating in the office">
-</div>
-
-<!-- ONE ECOSYSTEM, FOUR CAPABILITIES -->
-<section class="services-cap">
-  <div class="services-cap-inner">
-    <div class="services-cap-left">
-      <h2 class="section-title">One Ecosystem.<br>Four <span>Capabilities.</span></h2>
-      <p class="section-sub">We simplify the "chaos" by providing all the critical digital commerce solutions under one roof, so brands don't have to juggle vendors and there is no gap in execution.</p>
-      <div class="laptop-mock">
-        <img src="images/ysg-services-laptop-mockup.png" alt="YSG platform dashboard preview">
+<!-- CAPABILITIES -->
+<section class="capabilities">
+  <div class="section-wrap">
+    <h2 class="section-title">One Ecosystem. <span>Four Capabilities.</span></h2>
+    <p class="section-sub">We simplify the "chaos" by providing the critical digital commerce solutions under one roof, so brands don't have to juggle vendors and there is no gap in execution.</p>
+    <div class="capabilities-grid">
+      <div class="capability-card">
+        <div class="capability-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="6" stroke="#F47920" stroke-width="2.5"/><circle cx="10" cy="12" r="4" stroke="#1A2744" stroke-width="2.5"/><circle cx="38" cy="12" r="4" stroke="#1A2744" stroke-width="2.5"/><circle cx="10" cy="38" r="4" stroke="#1A2744" stroke-width="2.5"/><circle cx="38" cy="38" r="4" stroke="#1A2744" stroke-width="2.5"/><path d="M19 20L13 15M29 20L35 15M19 28L13 34M29 28L35 34" stroke="#1A2744" stroke-width="2"/></svg>
+        </div>
+        <h4>One Ecosystem</h4>
+        <p>Connecting marketplaces, logistics, fulfilment, and e-commerce solutions into one integrated workflow.</p>
       </div>
-    </div>
-    <div class="services-cap-right">
-      <a href="enablement.html" class="cap-card-link">
-        <div class="cap-card">
-          <img src="images/ysg-enablerment-desktop.webp" alt="Enablement">
-          <div class="cap-overlay">
-            <h3>Enablement</h3>
-            <p>Sustainable growth starts with a strong operational backbone. YSG manages end-to-end marketplace operations across Shopee, Lazada and TikTok Shop to ensure every storefront runs efficiently and remains optimised for sales performance.</p>
-          </div>
+      <div class="capability-card">
+        <div class="capability-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="17" stroke="#1A2744" stroke-width="2.5"/><path d="M7 24H41M24 7C29 12 31.5 18 31.5 24C31.5 30 29 36 24 41C19 36 16.5 30 16.5 24C16.5 18 19 12 24 7Z" stroke="#F47920" stroke-width="2.5"/></svg>
         </div>
-      </a>
-      <a href="warehouse-fulfilment.html" class="cap-card-link">
-        <div class="cap-card">
-          <img src="images/ysg-warehouse-desktop.webp" alt="Warehouse & Fulfilment">
-          <div class="cap-overlay">
-            <h3>Warehouse & Fulfilment</h3>
-            <p>Supported by Y3 and YCH's regional logistics network, YSG leverages in-house patented technology systems that seamlessly integrate storefronts, inventory and fulfilment for fast, accurate order delivery.</p>
-          </div>
+        <h4>Global Infrastructure</h4>
+        <p>Leveraging YCH Group's regional footprint and CU technology stack, WSI and warehouse network across APAC.</p>
+      </div>
+      <div class="capability-card">
+        <div class="capability-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="12" width="34" height="26" rx="2" stroke="#1A2744" stroke-width="2.5"/><path d="M16 12V9a4 4 0 014-4h8a4 4 0 014 4v3" stroke="#F47920" stroke-width="2.5"/><path d="M7 22H41" stroke="#1A2744" stroke-width="2.5"/></svg>
         </div>
-      </a>
-      <a href="marketing.html" class="cap-card-link">
-        <div class="cap-card">
-          <img src="images/ysg-marketing-desktop.webp" alt="Digital Marketing">
-          <div class="cap-overlay">
-            <h3>Digital Marketing</h3>
-            <p>In today's competitive landscape, organic traffic alone is no longer enough. With our in-house marketing team, we develop data-driven strategies that reach the right consumers at the right moment, ensuring every dollar delivers ROI.</p>
-          </div>
+        <h4>Marketplace Expertise</h4>
+        <p>Specialist teams across Shopee, Lazada, TikTok Shop and Google to run digital campaigns with confidence.</p>
+      </div>
+      <div class="capability-card">
+        <div class="capability-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 6L40 14V26C40 34 33 41 24 43C15 41 8 34 8 26V14L24 6Z" stroke="#1A2744" stroke-width="2.5"/><path d="M17 24L22 29L31 19" stroke="#F47920" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-      </a>
-      <a href="creative.html" class="cap-card-link">
-        <div class="cap-card">
-          <img src="images/ysg-creative-desktop.webp" alt="Creative">
-          <div class="cap-overlay">
-            <h3>Creative</h3>
-            <p>First impressions win or lose the sale. Our in-house creative team produces high-converting digital assets in close alignment with each brand's identity.</p>
-          </div>
-        </div>
-      </a>
+        <h4>End-to-End Execution</h4>
+        <p>From campaigns, order fulfilment and marketing to logistics, delivering complete e-commerce execution.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- BRANDS (reused from index.html) -->
-<section class="brands" id="brands">
-  <div class="brands-inner">
-    <div class="brands-header">
-      <h2 class="section-title">Brands We <span>Support</span></h2>
-      <p>Supporting brands across operations, marketplaces and digital commerce ecosystems.</p>
+<!-- ENABLEMENT -->
+<div class="feature-row alt">
+  <div class="feature-inner">
+    <div class="feature-media"><img src="images/service-enablement.png" alt="YSG marketplace enablement dashboard"></div>
+    <div class="feature-text">
+      <h3>Enablement</h3>
+      <p>A scalable growth strategy starts with a strong operational backbone. YSG manages storefronts and marketplace operations across Shopee, Lazada and TikTok Shop to keep every store optimized and inventory synchronized in real time.</p>
+      <div class="feature-logos">
+        <img src="images/icon-shopee.png" alt="Shopee">
+        <img src="images/ysg-lazada-partner.webp" alt="Lazada">
+        <img src="images/icon-tiktokshop.png" alt="TikTok Shop">
+        <img src="images/icon-shopify.png" alt="Shopify">
+      </div>
+      <a href="#contact" class="feature-btn">Find out more →</a>
     </div>
+  </div>
+</div>
+
+<!-- DIGITAL MARKETING -->
+<div class="feature-row reverse">
+  <div class="feature-inner">
+    <div class="feature-text">
+      <h3>Digital Marketing</h3>
+      <p>In today's competitive landscape, organic traffic alone is no longer enough. Brands need sharp, data-backed marketing strategies to stand out and drive results. Our team blends performance media with marketplace advertising to grow reach and revenue.</p>
+      <div class="feature-logos">
+        <img src="images/icon-googleads.png" alt="Google Ads">
+        <img src="images/icon-meta.png" alt="Meta">
+        <img src="images/icon-shopee.png" alt="Shopee">
+        <img src="images/ysg-lazada-partner.webp" alt="Lazada">
+      </div>
+      <a href="#contact" class="feature-btn">Find out more →</a>
+    </div>
+    <div class="feature-media"><img src="images/service-marketing.png" alt="YSG digital marketing team at work"></div>
+  </div>
+</div>
+
+<!-- CREATIVE -->
+<div class="feature-row alt">
+  <div class="feature-inner">
+    <div class="feature-media"><img src="images/service-creative.png" alt="YSG creative content shoot"></div>
+    <div class="feature-text">
+      <h3>Creative</h3>
+      <p>Every customer interaction shapes a buying decision. Our in-house creative team develops impactful brand and commerce assets that elevate visibility, strengthen brand consistency, and maximize conversion across every channel.</p>
+      <div class="feature-logos">
+        <img src="images/icon-shopee.png" alt="Shopee">
+        <img src="images/ysg-lazada-partner.webp" alt="Lazada">
+        <img src="images/icon-tiktokshop.png" alt="TikTok Shop">
+      </div>
+      <a href="#contact" class="feature-btn">Find out more →</a>
+    </div>
+  </div>
+</div>
+
+<!-- WAREHOUSE & FULFILMENT -->
+<div class="feature-row reverse">
+  <div class="feature-inner">
+    <div class="feature-text">
+      <h3>Warehouse & Fulfilment</h3>
+      <p>Our Warehouse & Fulfilment solution provides end-to-end inventory management, order processing, packing, shipping, and returns servicing tailored to brand needs. It ensures fast, consistent customer experiences across every channel used.</p>
+      <a href="#contact" class="feature-btn">Find out more →</a>
+    </div>
+    <div class="feature-media"><img src="images/service-warehouse.png" alt="YSG warehouse and fulfilment operations"></div>
+  </div>
+</div>
+
+<!-- TECHNOLOGY DIAGRAM -->
+<section class="tech-section">
+  <div class="section-wrap">
+    <h2 class="section-title">The <span>Technology</span> Behind Our Services</h2>
+    <p class="section-sub">Powering a truly omnichannel ecosystem with technology that seamlessly connects marketplaces, stores, warehouses, and logistics — unifying operations, inventory, and fulfilment across every channel for a seamless customer experience.</p>
+
+    <div class="tech-diagram-frame">
+      <div class="tech-diagram">
+        <div class="tech-box marketplaces">
+          <h5>Online Marketplaces</h5>
+          <div class="desc">Provides an integrated marketplace interface covering Product Listing & Catalogue, Seller Centre / Stock Level Display, Order Placement, Campaign / Flash Sale Configuration, FBS / FBL Fulfilment, and AWB / Shipping Label Generation. It enables products to be published, stock levels to be displayed, customer orders to be captured, promotions to be configured, and fulfilment documentation to be generated across connected marketplaces.</div>
+        </div>
+        <div class="tech-connector"></div>
+        <div class="tech-box oms">
+          <h5>OMS (Order Management System)</h5>
+          <div class="desc">Acts as the central order orchestration layer, covering Order Receiving, Safety Stock Configuration, Order Status Updates, SoftKitting, Order Processing & Routing, Campaign Mode, SKU / Product Mapping, Channel Stock Allocations, GWP Settings & Rules, Inventory Sync, and Returns & Cancellation Handling. It coordinates incoming orders, applies business rules, allocates inventory, manages product and campaign requirements, synchronises stock and order statuses, and controls returns and cancellations across sales channels.</div>
+        </div>
+        <div class="tech-connector"></div>
+        <div class="wms-row">
+          <div class="tech-box wms">
+            <h5>WMS (Warehouse Management System)</h5>
+            <div class="desc">Manages end-to-end warehouse operations through Inbound / GRN, ASN Generation & Putaway, Inventory Management, Pick & Pack, Batch / Wave / AGG Picking, Kitting & Bundling, RF Scanning, DO Creation & Commitment, Stock Sync to OMS, and Outbound / Dispatch. It controls the movement of goods from receiving and storage through picking, packing, inventory control, order preparation, and final dispatch.</div>
+          </div>
+          <div class="tech-box wms">
+            <h5>WMS (Warehouse Management System)</h5>
+            <div class="desc">Manages end-to-end warehouse operations through Inbound / GRN, ASN Generation & Putaway, Inventory Management, Pick & Pack, Batch / Wave / AGG Picking, Kitting & Bundling, RF Scanning, DO Creation & Commitment, Stock Sync to OMS, and Outbound / Dispatch. It controls the movement of goods from receiving and storage through picking, packing, inventory control, order preparation, and final dispatch.</div>
+          </div>
+        </div>
+        <div class="tech-connector"></div>
+        <div class="tech-box api"><h5>Y3 API</h5></div>
+        <div class="tech-connector"></div>
+        <div class="client-row">
+          <div class="tech-box client">
+            <h5>Client Warehouse</h5>
+            <div class="desc">The client's own warehouse operation, integrated with the Client POS, manages locally fulfilled stock outside YSG's WMS while keeping inventory levels and stock movements synchronised.</div>
+          </div>
+          <div class="tech-box client">
+            <h5>Client POS (Point-of-Sale) System</h5>
+            <div class="desc">The client's Point-of-Sale (POS) system, integrated via the Y3 API, exchanges data with the OMS to keep orders, fulfilment statuses, store transactions, and stock movements synchronised across channels.</div>
+          </div>
+          <div class="tech-box client">
+            <h5>Client ERP</h5>
+            <div class="desc">The client's Enterprise Resource Planning (ERP) system, such as SAP or Oracle, receives order, transaction, and inventory data from the Client POS for financial recording, inventory valuation, and reporting, keeping core business operations aligned with actual sales activity.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS WE SUPPORT -->
+<section class="brands">
+  <div class="section-wrap">
+    <h2 class="section-title" style="font-size:26px;">Brands We <span>Support</span></h2>
+    <p class="section-sub">Supporting brands across operations, marketplaces and digital commerce ecosystems.</p>
     <div class="brands-grid">
-      <img src="images/ysg-brand-aClouet.webp" alt="Ayam Brand">
-      <img src="images/ysg-brand-cosmoderm.webp" alt="Cosmoderm">
-      <img src="images/ysg-brand-foreo.webp" alt="Foreo">
-      <img src="images/ysg-brand-goldheart.webp" alt="Goldheart">
-      <img src="images/ysg-brand-guess.webp" alt="Guess">
-      <img src="images/ysg-brand-hansgrohe.webp" alt="Hansgrohe">
-      <img src="images/ysg-brand-illiyoon.webp" alt="Illiyoon">
-      <img src="images/ysg-brand-laneige.webp" alt="Laneige">
-      <img src="images/ysg-brand-lee-hwa.webp" alt="Lee Hwa">
-      <img src="images/ysg-brand-innisfree.webp" alt="Innisfree">
-      <img src="images/ysg-brand-lkk.webp" alt="Lee Kum Kee">
-      <img src="images/ysg-brand-mise-en-scene.webp" alt="Mise en Scene">
-      <img src="images/ysg-brand-murad.webp" alt="Murad">
-      <img src="images/ysg-brand-miele.webp" alt="Miele">
-      <img src="images/ysg-brand-pandora.webp" alt="Pandora">
-      <img src="images/ysg-brand-ryo.webp" alt="RYO">
-      <img src="images/ysg-brand-puma.webp" alt="Puma">
-      <img src="images/ysg-brand-sulwhasoo.webp" alt="Sulwhasoo">
-      <img src="images/ysg-brand-tomson-health.webp" alt="Thomson">
-      <img src="images/ysg-brand-toto.webp" alt="TOTO">
-      <img src="images/ysg-brand-W-atelier.webp" alt="W Atelier">
-      <img src="images/ysg-brand-lao-ban-niang.webp" alt="Lao Ban Niang">
-      <img src="images/ysg-brand-lim-kee.webp" alt="Lim Kee">
-      <img src="images/ysg-brand-top-durian.webp" alt="Top Durian">
-      <img src="images/ysg-brand-paseo.webp" alt="Paseo">
-      <img src="images/ysg-brand-pee-ka-poo.webp" alt="Pee Ka Poo">
-      <img src="images/ysg-brand-gryphon.webp" alt="Gryphon Singapore">
-    </div>
-    <div class="brands-cats">
-      <span>Beauty</span>
-      <span class="brands-sep">|</span>
-      <span>Food &amp; Beverage</span>
-      <span class="brands-sep">|</span>
-      <span>Fashion</span>
-      <span class="brands-sep">|</span>
-      <span>Home &amp; Living</span>
+      <img src="images/brand-cosmoderm.webp" alt="CosmoDerm">
+      <img src="images/brand-foreo.webp" alt="Foreo">
+      <img src="images/brand-goldheart.webp" alt="Goldheart">
+      <img src="images/brand-guess.webp" alt="Guess">
+      <img src="images/brand-hansgrohe.webp" alt="Hansgrohe">
+      <img src="images/brand-innisfree.webp" alt="Innisfree">
+      <img src="images/brand-illiyoon.webp" alt="Illiyoon">
+      <img src="images/brand-laneige.webp" alt="Laneige">
+      <img src="images/brand-mise-en-scene.webp" alt="Mise En Scene">
+      <img src="images/brand-murad.webp" alt="Murad">
+      <img src="images/brand-miele.webp" alt="Miele">
+      <img src="images/brand-pandora.webp" alt="Pandora">
+      <img src="images/brand-ryo.webp" alt="Ryo">
+      <img src="images/brand-puma.webp" alt="Puma">
+      <img src="images/brand-sulwhasoo.webp" alt="Sulwhasoo">
+      <img src="images/brand-thomson.webp" alt="Thomson">
+      <img src="images/brand-toto.webp" alt="Toto">
+      <img src="images/brand-w-atelier.webp" alt="W.Atelier">
     </div>
   </div>
 </section>
@@ -325,10 +431,10 @@
   <div style="height:3px; background:var(--orange); margin: 0 0 32px 0;"></div>
   <div class="footer-inner">
     <div class="footer-nav-bar">
-      <a href="enablement.html">Enablement</a><span>|</span>
-      <a href="marketing.html">Marketing</a><span>|</span>
-      <a href="creative.html">Creative</a><span>|</span>
-      <a href="warehouse-fulfilment.html">Warehouse &amp; Fulfilment</a>
+      <span class="footer-nav-item">Enablement</span><span>|</span>
+      <span class="footer-nav-item">Marketing</span><span>|</span>
+      <span class="footer-nav-item">Creative</span><span>|</span>
+      <span class="footer-nav-item">Warehouse &amp; Fulfilment</span>
     </div>
     <div class="footer-top">
       <div class="footer-logo">
@@ -360,6 +466,7 @@
   </div>
 </footer>
 
+<!-- FLOATING WHATSAPP BUTTON -->
 <div class="wa-float">
   <div class="wa-tooltip">Chat with us on WhatsApp</div>
   <a class="wa-btn"
