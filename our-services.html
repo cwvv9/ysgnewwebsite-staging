@@ -139,8 +139,12 @@
 
   /* ── BRANDS ── */
   .brands { background: var(--light); text-align: center; }
-  .brands-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 36px 52px; margin-top: 44px; }
-  .brands-grid img { height: 34px; object-fit: contain; filter: grayscale(15%); }
+  .brands-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 32px 40px; margin-top: 44px; }
+  .brands-grid img { height: 36px; object-fit: contain; filter: grayscale(20%); transition: filter 0.2s, transform 0.2s; }
+  .brands-grid img:hover { filter: grayscale(0%); transform: scale(1.05); }
+  .brands-cats { display: flex; justify-content: center; gap: 24px; margin-top: 32px; flex-wrap: wrap; }
+  .brands-cats span { font-size: 12px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--mid); cursor: pointer; padding: 6px 0; border-bottom: 2px solid transparent; transition: all 0.2s; }
+  .brands-cats .brands-sep { color: var(--border); font-size: 14px; cursor: default; padding: 0; letter-spacing: 0; font-weight: 400; }
 
   /* ── CTA ── */
   .cta-banner { background: var(--white); padding: 0 0 60px 0; display: flex; justify-content: center; }
@@ -390,29 +394,47 @@
 </section>
 
 <!-- BRANDS WE SUPPORT -->
-<section class="brands">
+<section class="brands" id="brands">
   <div class="section-wrap">
-    <h2 class="section-title" style="font-size:26px;">Brands We <span>Support</span></h2>
+    <h2 class="section-title">Brands We <span>Support</span></h2>
     <p class="section-sub">Supporting brands across operations, marketplaces and digital commerce ecosystems.</p>
     <div class="brands-grid">
-      <img src="images/brand-cosmoderm.webp" alt="CosmoDerm">
-      <img src="images/brand-foreo.webp" alt="Foreo">
-      <img src="images/brand-goldheart.webp" alt="Goldheart">
-      <img src="images/brand-guess.webp" alt="Guess">
-      <img src="images/brand-hansgrohe.webp" alt="Hansgrohe">
-      <img src="images/brand-innisfree.webp" alt="Innisfree">
-      <img src="images/brand-illiyoon.webp" alt="Illiyoon">
-      <img src="images/brand-laneige.webp" alt="Laneige">
-      <img src="images/brand-mise-en-scene.webp" alt="Mise En Scene">
-      <img src="images/brand-murad.webp" alt="Murad">
-      <img src="images/brand-miele.webp" alt="Miele">
-      <img src="images/brand-pandora.webp" alt="Pandora">
-      <img src="images/brand-ryo.webp" alt="Ryo">
-      <img src="images/brand-puma.webp" alt="Puma">
-      <img src="images/brand-sulwhasoo.webp" alt="Sulwhasoo">
-      <img src="images/brand-thomson.webp" alt="Thomson">
-      <img src="images/brand-toto.webp" alt="Toto">
-      <img src="images/brand-w-atelier.webp" alt="W.Atelier">
+      <img src="images/ysg-brand-aClouet.webp" alt="Ayam Brand">
+      <img src="images/ysg-brand-cosmoderm.webp" alt="Cosmoderm">
+      <img src="images/ysg-brand-foreo.webp" alt="Foreo">
+      <img src="images/ysg-brand-goldheart.webp" alt="Goldheart">
+      <img src="images/ysg-brand-guess.webp" alt="Guess">
+      <img src="images/ysg-brand-hansgrohe.webp" alt="Hansgrohe">
+      <img src="images/ysg-brand-illiyoon.webp" alt="Illiyoon">
+      <img src="images/ysg-brand-laneige.webp" alt="Laneige">
+      <img src="images/ysg-brand-lee-hwa.webp" alt="Lee Hwa">
+      <img src="images/ysg-brand-innisfree.webp" alt="Innisfree">
+      <img src="images/ysg-brand-lkk.webp" alt="Lee Kum Kee">
+      <img src="images/ysg-brand-mise-en-scene.webp" alt="Mise en Scene">
+      <img src="images/ysg-brand-murad.webp" alt="Murad">
+      <img src="images/ysg-brand-miele.webp" alt="Miele">
+      <img src="images/ysg-brand-pandora.webp" alt="Pandora">
+      <img src="images/ysg-brand-ryo.webp" alt="RYO">
+      <img src="images/ysg-brand-puma.webp" alt="Puma">
+      <img src="images/ysg-brand-sulwhasoo.webp" alt="Sulwhasoo">
+      <img src="images/ysg-brand-tomson-health.webp" alt="Thomson">
+      <img src="images/ysg-brand-toto.webp" alt="TOTO">
+      <img src="images/ysg-brand-W-atelier.webp" alt="W Atelier">
+      <img src="images/ysg-brand-lao-ban-niang.webp" alt="Lao Ban Niang">
+      <img src="images/ysg-brand-lim-kee.webp" alt="Lim Kee">
+      <img src="images/ysg-brand-top-durian.webp" alt="Top Durian">
+      <img src="images/ysg-brand-paseo.webp" alt="Paseo">
+      <img src="images/ysg-brand-pee-ka-poo.webp" alt="Pee Ka Poo">
+      <img src="images/ysg-brand-gryphon.webp" alt="Gryphon Singapore">
+    </div>
+    <div class="brands-cats">
+      <span>Beauty</span>
+      <span class="brands-sep">|</span>
+      <span>Food &amp; Beverage</span>
+      <span class="brands-sep">|</span>
+      <span>Fashion</span>
+      <span class="brands-sep">|</span>
+      <span>Home &amp; Living</span>
     </div>
   </div>
 </section>
@@ -484,6 +506,13 @@
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
   hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+
+  document.querySelectorAll('.brands-cats span').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelector('.brands-cats span.active')?.classList.remove('active');
+      btn.classList.add('active');
+    });
+  });
 </script>
 
 </body>
