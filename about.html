@@ -78,6 +78,19 @@
   .badges-row { display: flex; justify-content: center; align-items: center; gap: 28px; margin-top: 20px; flex-wrap: wrap; }
   .badges-row img { height: 100px; object-fit: contain; }
 
+  .brand-colors { background: var(--light); }
+  .brand-colors-inner { display: flex; align-items: center; gap: 56px; max-width: 1200px; margin: 0 auto; }
+  .brand-colors-logo { flex: 0 0 auto; width: 260px; display: flex; align-items: center; justify-content: center; }
+  .brand-colors-logo img { width: 100%; height: auto; object-fit: contain; }
+  .brand-colors-text { flex: 1 1 auto; }
+  .brand-colors-text p { font-size: 15px; color: var(--mid); line-height: 1.75; margin-bottom: 18px; }
+  .brand-colors-text p:last-child { margin-bottom: 0; }
+  .brand-colors-text p strong { color: var(--dark); font-weight: 700; }
+  @media (max-width: 900px) {
+    .brand-colors-inner { flex-direction: column; gap: 28px; text-align: center; }
+    .brand-colors-logo { width: 180px; }
+  }
+
   .regional { background: var(--white); }
   .regional-grid { display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: 24px; align-items: start; margin-top: 48px; }
   .regional-col { display: flex; flex-direction: column; gap: 20px; }
@@ -311,6 +324,22 @@
       <img src="images/ysg-lazmall-2023.webp" alt="LazMall 2023">
       <img src="images/ysg-national-business-award-2023.webp" alt="National Business Award">
       <img src="images/ysg-sg-enterprise.webp" alt="SG Enterprise">
+    </div>
+  </div>
+</section>
+
+<!-- BRAND COLOURS: added per 16th Sept feedback, sits below the challenges section -->
+<section class="brand-colors">
+  <div class="brand-colors-inner">
+    <div class="brand-colors-logo">
+      <img src="images/ysg_logo_big.png" alt="YSG Logo">
+    </div>
+    <div class="brand-colors-text">
+      <p>Our colours reflect the spirit of YSG — <strong>bold, vibrant, trusted and forward-thinking</strong>.</p>
+      <p>Our warm <strong>orange-red gradients</strong> bring energy, optimism and creativity to the YSG experience. They represent our friendly, driven and vibrant nature, capturing our excitement for eCommerce and our determination to make a difference.</p>
+      <p>Our <strong>turquoise-blue gradients</strong> bring a sense of calm, stability and inspiration. Like the ocean, they represent freedom, possibility and our ambition to reach greater heights as we connect brands and shoppers across Southeast Asia.</p>
+      <p>Completing our palette, <strong>violet</strong> provides a dynamic and soothing contrast. It reflects the qualities at the heart of YSG — <strong>humility, trust and commitment</strong> — and our dedication to delivering only the best for our brands and customers.</p>
+      <p>Together, these colours express who we are: <strong>energetic in what we do, trusted in how we work, and ambitious in where we’re going.</strong></p>
     </div>
   </div>
 </section>
