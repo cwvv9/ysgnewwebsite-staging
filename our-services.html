@@ -112,11 +112,27 @@
   .tech-box { border-radius: 10px; padding: 18px 26px; text-align: left; }
   .tech-box h5 { font-size: 14.5px; font-weight: 700; text-align: center; margin-bottom: 10px; }
   .tech-box .desc { font-size: 11.5px; font-weight: 400; line-height: 1.7; text-align: center; }
-  .tech-box.marketplaces { background: var(--white); border: 1px solid var(--dark); }
+  /* .tech-box.marketplaces { background: var(--white); border: 1px solid var(--dark); } */
+  .tech-box.marketplaces { background: var(--white); border: 1px dashed var(--orange); }
   .tech-box.marketplaces h5 { color: var(--navy); }
   .tech-box.marketplaces .desc { color: var(--mid); }
-  .tech-connector { width: 0; height: 26px; margin: 0 auto; border-left: 2px dotted var(--orange); position: relative; }
-  .tech-connector::after { content: ''; position: absolute; left: -4px; bottom: -1px; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 6px solid var(--orange); }
+/* ▼ CHANGED: dotted line drawn with a gradient instead of border-style: dotted */
+.tech-connector {
+  width: 2px; height: 26px; margin: 0 auto; position: relative;
+  background-image: linear-gradient(to bottom, var(--orange) 50%, transparent 50%);
+  background-size: 2px 4px;
+  background-repeat: repeat-y;
+}
+/* ▼ CHANGED: arrowhead centred with left:50% + translateX instead of a fixed -4px offset */
+.tech-connector::after {
+  content: ''; position: absolute;
+  left: 50%; bottom: 0; transform: translateX(-50%);
+  width: 0; height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid var(--orange);
+}
+ 
   .tech-box.oms { background: var(--orange); }
   .tech-box.oms h5 { color: var(--white); }
   .tech-box.oms .desc { color: rgba(255,255,255,0.88); }
