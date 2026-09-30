@@ -60,9 +60,16 @@
   .page-header-text { max-width: 560px; }
   .page-header-text p { color: var(--mid); font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
   .marketplace-label { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
-  .marketplace-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+  /* .marketplace-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
   .marketplace-badges .badge { display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 8px; padding: 10px 18px; font-size: 14px; font-weight: 700; color: var(--dark); background: var(--white); }
-  .marketplace-badges .badge img { height: 42px; }
+  .marketplace-badges .badge img { height: 42px; } */
+   /* ▼ CHANGED: flex → grid, so every badge column is the same width */
+  .marketplace-badges { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 12px; }
+  /* ▼ CHANGED: added justify-content: center so the logo sits in the middle of the wider box */
+  .marketplace-badges .badge { display: flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--border); border-radius: 8px; padding: 10px 18px; font-size: 14px; font-weight: 700; color: var(--dark); background: var(--white); }
+  /* ▼ CHANGED: max-width + contain so a wide logo scales down instead of overflowing the box */
+  .marketplace-badges .badge img { height: 42px; max-width: 100%; object-fit: contain; }
+     .marketplace-badges { grid-template-columns: repeat(2, 1fr); }
   .marketplace-note { font-size: 13px; color: var(--mid); }
 
   .services-hero-img { width: 100%; margin: 30px 0 0; padding: 0; }
