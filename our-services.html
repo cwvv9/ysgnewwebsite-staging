@@ -116,14 +116,20 @@
   .tech-box.marketplaces { background: var(--white); border: 1px dashed var(--orange); }
   .tech-box.marketplaces h5 { color: var(--navy); }
   .tech-box.marketplaces .desc { color: var(--mid); }
-/* ▼ CHANGED: dotted line drawn with a gradient instead of border-style: dotted */
+/* ▼ CHANGED: connector is now just a container, no background */
 .tech-connector {
   width: 2px; height: 26px; margin: 0 auto; position: relative;
+}
+/* ▼ NEW: the dotted line stops 6px short, leaving room for the arrowhead */
+.tech-connector::before {
+  content: ''; position: absolute;
+  top: 0; left: 0;
+  width: 2px; height: calc(100% - 6px);
   background-image: linear-gradient(to bottom, var(--orange) 50%, transparent 50%);
   background-size: 2px 4px;
   background-repeat: repeat-y;
 }
-/* ▼ CHANGED: arrowhead centred with left:50% + translateX instead of a fixed -4px offset */
+/* unchanged: the arrowhead sits in the bottom 6px */
 .tech-connector::after {
   content: ''; position: absolute;
   left: 50%; bottom: 0; transform: translateX(-50%);
