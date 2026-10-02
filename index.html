@@ -180,7 +180,11 @@
   .cap-col { display: flex; flex-direction: column; gap: 56px; }
   .cap-col-left  { grid-column: 1; grid-row: 2; }
   .cap-col-right { grid-column: 3; grid-row: 1 / 3; }
-  .cap-video { grid-column: 2; grid-row: 2; margin-top: -48px; }
+  .cap-video {
+    grid-column: 2; grid-row: 2; margin-top: -48px;
+    align-self: start;
+    position: sticky; top: 120px;   /* follows the scroll within the section, 120px below the top */
+  }
   .cap-video video { width: 100%; height: auto; display: block; border-radius: 12px; background: var(--light); }
 
   .cap-card { display: block; text-decoration: none; color: inherit; }
@@ -372,11 +376,7 @@
     .cap-layout { display: flex; flex-direction: column; gap: 40px; }
     .cap-col { display: contents; }
     .cap-head { padding-bottom: 0; order: 0; }
-   .cap-video {
-    grid-column: 2; grid-row: 2; margin-top: -48px;
-    align-self: start;
-    position: sticky; top: 120px;
-  }
+    .cap-video { margin-top: 0; order: 1; position: static; }
     .cap-card-enablement { order: 2; }
     .cap-card-marketing  { order: 3; }
     .cap-card-creative   { order: 4; }
