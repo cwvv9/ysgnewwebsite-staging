@@ -166,18 +166,41 @@
   .marquee-track img:hover { filter: grayscale(0%); }
   @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-  /* ── CAPABILITIES ── */
+  /* ── CAPABILITIES (staggered 3-column layout with centre video) ── */
   .capabilities { background: var(--white); }
   .capabilities-inner { max-width: 1200px; margin: 0 auto; }
-  .capabilities-header { margin-bottom: 48px; }
-  .capabilities-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .cap-card { border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; }
-  .cap-card img { width: 100%; height: 320px; object-fit: cover; display: block; transition: transform 0.4s; }
-  .cap-card:hover img { transform: scale(1.04); }
-  .cap-card .cap-info { padding: 20px 0 8px; }
-  .cap-card .cap-info h3 { font-size: 18px; font-weight: 700; color: var(--navy); display: flex; align-items: center; gap: 6px; }
-  .cap-card .cap-info h3::after { content: '→'; color: var(--orange); font-size: 16px; }
-  .cap-card .cap-info p { font-size: 14px; color: var(--mid); margin-top: 6px; line-height: 1.6; }
+  .cap-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    align-items: start;
+  }
+  .cap-head { grid-column: 1 / 3; grid-row: 1; padding-bottom: 56px; }
+  .cap-head .section-sub { max-width: 560px; }
+  .cap-col { display: flex; flex-direction: column; gap: 56px; }
+  .cap-col-left  { grid-column: 1; grid-row: 2; }
+  .cap-col-right { grid-column: 3; grid-row: 1 / 3; }
+  .cap-video { grid-column: 2; grid-row: 2; margin-top: -48px; }
+  .cap-video video { width: 100%; height: auto; display: block; border-radius: 12px; background: var(--light); }
+
+  .cap-card { display: block; text-decoration: none; color: inherit; }
+  .cap-card .cap-img { border-radius: 12px; overflow: hidden; aspect-ratio: 1 / 1.05; }
+  .cap-card .cap-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+  .cap-card:hover .cap-img img { transform: scale(1.04); }
+  .cap-card h3 {
+    font-size: 18px; font-weight: 700; color: var(--navy);
+    display: flex; align-items: center; gap: 8px;
+    margin-top: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+    transition: color 0.2s;
+  }
+  .cap-card h3::after { content: '→'; color: var(--orange); font-size: 16px; transition: transform 0.2s; }
+  .cap-card:hover h3 { color: var(--orange); }
+  .cap-card:hover h3::after { transform: translateX(4px); }
+  .cap-card p {
+    font-size: 14px; color: var(--mid); margin-top: 12px; line-height: 1.6;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .cap-card:focus-visible { outline: 2px solid var(--orange); outline-offset: 6px; border-radius: 12px; }
 
   /* ── STATS BENTO ── */
   .stats { background: var(--white); padding: 64px calc((100% - 1200px) / 2); }
@@ -344,7 +367,17 @@
       background-position: center top;
     }
     .value-props-inner { grid-template-columns: 1fr; gap: 40px; }
-    .capabilities-grid { grid-template-columns: 1fr; }
+
+    /* Capabilities: single column — heading, video, then the four cards */
+    .cap-layout { display: flex; flex-direction: column; gap: 40px; }
+    .cap-col { display: contents; }
+    .cap-head { padding-bottom: 0; order: 0; }
+    .cap-video { margin-top: 0; order: 1; }
+    .cap-card-enablement { order: 2; }
+    .cap-card-marketing  { order: 3; }
+    .cap-card-creative   { order: 4; }
+    .cap-card-warehouse  { order: 5; }
+    .cap-card .cap-img { aspect-ratio: 4 / 3; }
 
     .stats { padding: 40px 16px; }
     .stats-inner {
@@ -408,8 +441,7 @@
     .value-card { flex-direction: column; }
     .value-card img { width: 40px; height: 40px; }
 
-    .cap-card img { height: 180px; }
-    .cap-card .cap-info h3 { font-size: 16px; }
+    .cap-card h3 { font-size: 16px; }
 
     .stat-num { font-size: 44px; }
     .stat-card { padding: 24px 20px; }
@@ -432,6 +464,10 @@
     .wa-float { bottom: 16px; right: 16px; }
     .wa-btn { width: 48px; height: 48px; }
     .wa-btn svg { width: 26px; height: 26px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cap-card .cap-img img, .cap-card h3::after { transition: none; }
   }
 </style>
 </head>
@@ -551,40 +587,49 @@
 <!-- CAPABILITIES -->
 <section class="capabilities" id="services">
   <div class="capabilities-inner">
-    <div class="capabilities-header">
-      <div class="section-label">What We Do</div>
-      <h2 class="section-title">One Ecosystem.<br><span>Four Capabilities.</span></h2>
-      <p class="section-sub">We simplify the "chaos" by providing all the critical digital commerce solutions under one roof, so brands don't have to juggle vendors and there is no gap in execution.</p>
-    </div>
-    <div class="capabilities-grid">
-      <div class="cap-card">
-        <img src="images/ysg-enablerment-desktop.webp" alt="Enablement">
-        <div class="cap-info">
+    <div class="cap-layout">
+
+      <div class="cap-head">
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">One Ecosystem.<br><span>Four Capabilities.</span></h2>
+        <p class="section-sub">We simplify the "chaos" by providing all the critical digital commerce solutions under one roof, so brands don't have to juggle vendors and there is no gap in execution.</p>
+      </div>
+
+      <!-- LEFT COLUMN: Digital Marketing, Warehouse & Fulfilment -->
+      <div class="cap-col cap-col-left">
+        <a href="marketing.html" class="cap-card cap-card-marketing">
+          <div class="cap-img"><img src="images/ysg-marketing-desktop.webp" alt="Digital Marketing"></div>
+          <h3>Digital Marketing</h3>
+          <p>In today's competitive landscape, organic traffic alone is no longer enough. Brands need sharp, targeted marketing strategies to scale their online to stay ahead. With our in-house marketing team, we develop data-driven strategies that reach the right consumers at the right moment, ensuring every dollar delivers ROI.</p>
+        </a>
+        <a href="warehouse-fulfilment.html" class="cap-card cap-card-warehouse">
+          <div class="cap-img"><img src="images/ysg-warehouse-desktop.webp" alt="Warehouse & Fulfilment"></div>
+          <h3>Warehouse &amp; Fulfilment</h3>
+          <p>YCH's B2C Warehouse Fulfilment solution provides end-to-end inventory management, order processing, packing, shipping, and returns services, enabling brands to deliver fast, accurate, and seamless customer experiences across every sales channel.</p>
+        </a>
+      </div>
+
+      <!-- CENTRE: video -->
+      <div class="cap-video">
+        <video autoplay muted loop playsinline preload="metadata" aria-label="YSG platform demo">
+          <source src="images/homepage%20video.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- RIGHT COLUMN: Enablement, Creative -->
+      <div class="cap-col cap-col-right">
+        <a href="enablement.html" class="cap-card cap-card-enablement">
+          <div class="cap-img"><img src="images/ysg-enablerment-desktop.webp" alt="Enablement"></div>
           <h3>Enablement</h3>
           <p>Sustainable growth starts with a strong operational backbone. YSG manages end-to-end marketplace operations across Shopee, Lazada and TikTok Shop to ensure every storefront runs efficiently and remains optimised for sales performance.</p>
-        </div>
-      </div>
-      <div class="cap-card">
-        <img src="images/ysg-marketing-desktop.webp" alt="Marketing">
-        <div class="cap-info">
-          <h3>Marketing</h3>
-          <p>In today's competitive landscape, organic traffic alone is no longer enough. Brands need sharp, targeted marketing strategies to scale their online to stay ahead. With our in-house marketing team, we develop data-driven strategies that reach the right consumers at the right moment, ensuring every dollar delivers ROI.</p>
-        </div>
-      </div>
-      <div class="cap-card">
-        <img src="images/ysg-creative-desktop.webp" alt="Creative">
-        <div class="cap-info">
+        </a>
+        <a href="creative.html" class="cap-card cap-card-creative">
+          <div class="cap-img"><img src="images/ysg-creative-desktop.webp" alt="Creative"></div>
           <h3>Creative</h3>
           <p>Every customer interaction shapes a buying decision. Our in-house creative team develops impactful brand and commerce assets that elevate visibility, strengthen brand consistency, and maximize conversion across every channel.</p>
-        </div>
+        </a>
       </div>
-      <div class="cap-card">
-        <img src="images/ysg-warehouse-desktop.webp" alt="Warehouse & Fulfilment">
-        <div class="cap-info">
-          <h3>Warehouse & Fulfilment</h3>
-          <p>YCH's B2C Warehouse Fulfilment solution provides end-to-end inventory management, order processing, packing, shipping, and returns services, enabling brands to deliver fast, accurate, and seamless customer experiences across every sales channel.</p>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
