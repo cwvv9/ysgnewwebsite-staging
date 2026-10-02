@@ -372,7 +372,11 @@
     .cap-layout { display: flex; flex-direction: column; gap: 40px; }
     .cap-col { display: contents; }
     .cap-head { padding-bottom: 0; order: 0; }
-    .cap-video { margin-top: 0; order: 1; }
+   .cap-video {
+    grid-column: 2; grid-row: 2; margin-top: -48px;
+    align-self: start;
+    position: sticky; top: 120px;
+  }
     .cap-card-enablement { order: 2; }
     .cap-card-marketing  { order: 3; }
     .cap-card-creative   { order: 4; }
