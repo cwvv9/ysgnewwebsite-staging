@@ -96,13 +96,22 @@
   .detail-block:nth-of-type(even) { background: var(--light); }
 
   @media (max-width: 900px) {
-    .detail-block-inner, .detail-block.reverse .detail-block-inner { grid-template-columns: 1fr; gap: 30px; }
-    /* Mobile: image always first, then content */
-    .detail-block .detail-media, .detail-block.reverse .detail-media { order: -1; }
-    .detail-block.reverse .detail-copy { order: initial; }
+    /* Mobile flow for every block: 1. title + description, 2. image, 3. tiles */
+    .detail-block-inner, .detail-block.reverse .detail-block-inner { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+    .detail-copy { display: contents; }
+    .detail-block .section-title { order: 1; }
+    .detail-block .section-sub { order: 2; max-width: 100%; }
+    .detail-block .detail-media, .detail-block.reverse .detail-media { order: 3; margin-top: 30px; }
+    .detail-block .detail-cards { order: 4; margin-top: 30px; }
     .detail-cards { grid-template-columns: 1fr; }
     .detail-card h4 { font-size: 16px; }
     .detail-card p { font-size: 14px; }
+
+    /* Mobile images: full width, square corners, no shadow */
+    .detail-media img,
+    .detail-media.phone-media img,
+    .detail-media.phone-media.phone-media-lg img { width: 100%; max-width: 100%; height: auto; border-radius: 0; box-shadow: none; }
+    .explore-card img { border-radius: 0; }
   }
 
   /* ── CTA BANNER ── */
@@ -180,8 +189,6 @@
     .marketplace-badges .badge { padding: 9px 16px; }
     .marketplace-badges .badge img { height: 28px; }
 
-    .detail-media.phone-media.phone-media-lg img { max-width: 260px; }
-
     .footer-top { grid-template-columns: 1fr; gap: 24px; }
     .footer-map-col { justify-content: flex-start !important; margin-top: 8px; }
     .footer-map-col img { width: 100% !important; max-width: 100% !important; }
@@ -214,9 +221,6 @@
     .detail-card { padding: 16px 18px; }
     .detail-card h4 { font-size: 16px; }
     .detail-card p { font-size: 14px; }
-
-    .detail-media.phone-media.phone-media-lg img { max-width: 220px; }
-    .detail-media.phone-media img { max-width: 200px; }
 
     .explore-card img { height: 160px; }
     .explore-card h3 { font-size: 16px; }
