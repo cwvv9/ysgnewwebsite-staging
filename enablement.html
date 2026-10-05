@@ -96,9 +96,13 @@
   .detail-block:nth-of-type(even) { background: var(--light); }
 
   @media (max-width: 900px) {
-    .detail-block-inner, .detail-block.reverse .detail-block-inner { grid-template-columns: 1fr; }
-    .detail-block.reverse .detail-media, .detail-block.reverse .detail-copy { order: initial; }
+    .detail-block-inner, .detail-block.reverse .detail-block-inner { grid-template-columns: 1fr; gap: 30px; }
+    /* Mobile: image always first, then content */
+    .detail-block .detail-media, .detail-block.reverse .detail-media { order: -1; }
+    .detail-block.reverse .detail-copy { order: initial; }
     .detail-cards { grid-template-columns: 1fr; }
+    .detail-card h4 { font-size: 16px; }
+    .detail-card p { font-size: 14px; }
   }
 
   /* ── CTA BANNER ── */
@@ -124,6 +128,7 @@
   .explore-card p { font-size: 13px; color: var(--mid); line-height: 1.6; }
   @media (max-width: 900px) {
     .explore-grid { grid-template-columns: 1fr; }
+    .explore-card p { font-size: 14px; }
   }
 
   /* ── FOOTER ── */
@@ -207,19 +212,19 @@
     section { padding: 48px 20px; }
 
     .detail-card { padding: 16px 18px; }
-    .detail-card h4 { font-size: 14px; }
-    .detail-card p { font-size: 12px; }
+    .detail-card h4 { font-size: 16px; }
+    .detail-card p { font-size: 14px; }
 
     .detail-media.phone-media.phone-media-lg img { max-width: 220px; }
     .detail-media.phone-media img { max-width: 200px; }
 
     .explore-card img { height: 160px; }
-    .explore-card h3 { font-size: 15px; }
-    .explore-card p { font-size: 12px; }
+    .explore-card h3 { font-size: 16px; }
+    .explore-card p { font-size: 14px; }
 
     .cta-text { padding: 28px 20px; }
     .cta-banner h2 { font-size: 24px; }
-    .cta-banner p { font-size: 13px; }
+    .cta-banner p { font-size: 14px; }
 
     .footer-nav-bar span { display: none; }
     .footer-nav-bar a, .footer-nav-bar .footer-nav-item { padding: 0 5px; font-size: 11px; }
