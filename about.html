@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About YSG – Digital Commerce & Omnichannel Solutions Singapore</title>
-<meta name="description" content="Established in 2020, YSG has evolved from our SME roots into a trusted partner in Asia’s digital commerce landscape, supporting businesses of all sizes, from SMEs to MNCs.​">
+<meta name="description" content="Established in 2020, YSG has evolved from our SME roots into a trusted partner in Asia’s digital commerce landscape, supporting businesses of all sizes, from SMEs to MNCs.">
 <link rel="canonical" href="https://www.ysg.asia/about-us">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -96,7 +96,6 @@
   .regional-grid { display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: 24px; align-items: start; margin-top: 48px; }
   .regional-col { display: flex; flex-direction: column; gap: 20px; }
 
-  /* UPDATED: region-card now horizontal — image left, details right */
   .region-card { display: flex; flex-direction: row; align-items: stretch; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
   .region-card img { width: 140px; min-width: 140px; height: auto; object-fit: cover; display: block; }
   .region-card .region-info { padding: 14px 16px; display: flex; flex-direction: column; justify-content: center; }
@@ -115,15 +114,15 @@
   .team-card .team-role { font-size: 12px; color: var(--mid); font-weight: 500; margin: 3px 0 10px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
   .team-card p.bio { font-size: 12.5px; color: var(--mid); line-height: 1.6; }
 
-  .stats-about { background: var(--light); }
-  .stats-about-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px; max-width: 1200px; height: 620px; margin: 48px auto 0; }
+  /* STATS: no top padding / margin — the Team section above (same background) already provides the spacing */
+  .stats-about { background: var(--light); padding-top: 0; }
+  .stats-about-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px; max-width: 1200px; height: 620px; margin: 0 auto; }
   .stats-about-grid .stat-img { border-radius: 12px; overflow: hidden; }
   .stats-about-grid .stat-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .stat-card-about { border-radius: 12px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; }
   .stat-card-about.orange { background: var(--orange); }
   .stat-card-about.navy { background: var(--navy); }
-  /* .stat-card-about .stat-num { font-size: clamp(48px, 6vw, 67px); font-weight: 900; color: var(--white); line-height: 1; } */
- .stat-card-about .stat-num { font-size: clamp(24px, 3vw, 33.5px); font-weight: 900; color: var(--white); line-height: 1; }
+  .stat-card-about .stat-num { font-size: clamp(24px, 3vw, 33.5px); font-weight: 900; color: var(--white); line-height: 1; }
   .stat-card-about.navy .stat-num { color: var(--orange); }
   .stat-card-about .stat-label { font-size: 15px; font-weight: 700; color: var(--white); margin-top: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.35); }
   .stat-card-about .stat-desc { font-size: 15px; color: rgba(255,255,255,0.7); margin-top: 12px; line-height: 1.6; }
@@ -166,87 +165,22 @@
   .whatsapp-btn:hover { transform: scale(1.08); }
 
   /* ── FLOATING WHATSAPP ── */
-  .wa-float {
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
-    z-index: 999;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
-  }
-  .wa-tooltip {
-    position: relative;
-    background: var(--navy);
-    color: #fff;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 8px 14px;
-    border-radius: 8px;
-    white-space: nowrap;
-    opacity: 0;
-    transform: translateX(8px);
-    transition: opacity 0.2s, transform 0.2s;
-    pointer-events: none;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-  }
-  .wa-tooltip::after {
-    content: '';
-    position: absolute;
-    right: 18px;
-    bottom: -6px;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 6px solid var(--navy);
-  }
-  .wa-float:hover .wa-tooltip {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  .wa-btn {
-    position: relative;
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    background: #25D366;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 4px 20px rgba(37,211,102,0.45);
-    transition: transform 0.2s, box-shadow 0.2s;
-    animation: wa-pop 0.5s cubic-bezier(0.34,1.56,0.64,1) 1.2s both;
-  }
-  .wa-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 28px rgba(37,211,102,0.55);
-  }
+  .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+  .wa-tooltip { position: relative; background: var(--navy); color: #fff; font-size: 13px; font-weight: 600; padding: 8px 14px; border-radius: 8px; white-space: nowrap; opacity: 0; transform: translateX(8px); transition: opacity 0.2s, transform 0.2s; pointer-events: none; box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+  .wa-tooltip::after { content: ''; position: absolute; right: 18px; bottom: -6px; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid var(--navy); }
+  .wa-float:hover .wa-tooltip { opacity: 1; transform: translateX(0); }
+  .wa-btn { position: relative; width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.45); transition: transform 0.2s, box-shadow 0.2s; animation: wa-pop 0.5s cubic-bezier(0.34,1.56,0.64,1) 1.2s both; }
+  .wa-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
   .wa-btn svg { width: 30px; height: 30px; fill: #fff; }
-  .wa-btn::before {
-    content: '';
-    position: absolute;
-    width: 58px; height: 58px;
-    border-radius: 50%;
-    background: rgba(37,211,102,0.35);
-    animation: wa-pulse 2.4s ease-out infinite;
-  }
-  @keyframes wa-pulse {
-    0%   { transform: scale(1); opacity: 0.7; }
-    70%  { transform: scale(1.6); opacity: 0; }
-    100% { opacity: 0; }
-  }
-  @keyframes wa-pop {
-    0%   { transform: scale(0); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-  }
+  .wa-btn::before { content: ''; position: absolute; width: 58px; height: 58px; border-radius: 50%; background: rgba(37,211,102,0.35); animation: wa-pulse 2.4s ease-out infinite; }
+  @keyframes wa-pulse { 0% { transform: scale(1); opacity: 0.7; } 70% { transform: scale(1.6); opacity: 0; } 100% { opacity: 0; } }
+  @keyframes wa-pop { 0% { transform: scale(0); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
 
   @media (max-width: 900px) {
     nav { padding: 0 24px; }
     nav .nav-links { display: none; }
     .nav-hamburger { display: flex; }
     section { padding: 60px 24px; }
-    /* .page-header { padding: 0 24px; } */
     .page-header { padding: 100px 24px 0; }
     .about-hero-img img { margin-top:25px; height: 260px; }
     .regional-grid { grid-template-columns: 1fr; }
@@ -256,6 +190,11 @@
     .stats-about-grid { grid-template-columns: 1fr; grid-template-rows: auto; height: auto; }
     .stats-about-grid .stat-img { min-height: 220px; }
     .stats-about-grid .stat-signboard { min-height: 220px; }
+    /* Mobile order: image, content, image, content */
+    .stats-about-grid .stat-img { order: 1; }
+    .stats-about-grid .stat-card-about.orange { order: 2; }
+    .stats-about-grid .stat-signboard { order: 3; }
+    .stats-about-grid .stat-card-about.navy { order: 4; }
     .footer-top { grid-template-columns: 1fr; gap: 24px; }
     .footer-map-col img { width: 100% !important; max-width: 100% !important; }
     footer { padding: 0 24px 28px; }
@@ -276,10 +215,8 @@
 
 <nav>
   <div class="nav-inner">
-    <!-- <div class="logo"><img src="images/logo_1.png" alt="YSG"></div> -->
     <div class="logo"><a href="index.html"><img src="images/ysg-white-logo.png" alt="YSG"></a></div>
     <div class="nav-links">
-      <!-- <a href="index.html">Home</a> -->
       <a href="about.html" class="active">About Us</a>
       <a href="our-services.html">Our Services</a>
       <a href="#contact" class="nav-cta">Contact Us →</a>
@@ -290,7 +227,6 @@
   </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
-  <!-- <a href="index.html">Home</a> -->
   <a href="about.html">About Us</a>
   <a href="our-services.html" onclick="document.getElementById('mobileNav').classList.remove('open')">Our Services</a>
   <a href="#contact">Contact Us →</a>
@@ -301,14 +237,13 @@
   <div class="page-header-inner">
     <h1 class="page-title">About <span>YSG</span></h1>
     <div class="page-header-text">
-      <p>Established in 2020, YSG has evolved from our SME roots into a trusted partner in Asia’s digital commerce landscape, supporting businesses of all sizes, from SMEs to MNCs.​​</p>
-      <p>Over the past five years, we have built a reputation as a strategic ally for brands across industries—from Beauty and FMCG to beyond—supporting their growth through integrated B2B, B2C and Offline to Omnichannel commerce capabilities. By bringing these capabilities together under one roof, we enable brands of all scales to seamlessly connect businesses, consumers and offline-to-online channels, accelerate market expansion, and drive sustainable growth across Asia.​​​</p> 
-     <a href="https://www.ych.com/" target="_blank" rel="noopener" class="hero-cta">Explore Our Logistics Partner​ →</a>
+      <p>Established in 2020, YSG has evolved from our SME roots into a trusted partner in Asia’s digital commerce landscape, supporting businesses of all sizes, from SMEs to MNCs.</p>
+      <p>Over the past five years, we have built a reputation as a strategic ally for brands across industries—from Beauty and FMCG to beyond—supporting their growth through integrated B2B, B2C and Offline to Omnichannel commerce capabilities. By bringing these capabilities together under one roof, we enable brands of all scales to seamlessly connect businesses, consumers and offline-to-online channels, accelerate market expansion, and drive sustainable growth across Asia.</p>
+      <a href="https://www.ych.com/" target="_blank" rel="noopener" class="hero-cta">Explore Our Logistics Partner →</a>
     </div>
   </div>
 </div>
 
-<!-- HERO IMAGE: now full-bleed / full width -->
 <div class="about-hero-img">
   <img src="images/about-us-banner.webp" alt="YSG team collaborating in the office">
 </div>
@@ -317,8 +252,7 @@
   <div class="section-wrap">
     <h2 class="section-title">We understand your <span>challenges.</span></h2>
     <p class="section-sub">E-commerce success today demands far more than just launching an online store. Brands must simultaneously manage storefront operations, marketing, technology and fulfilment across multiple platforms and channels — often through a fragmented network of vendors. The result is operational complexity, gaps in execution, inefficiency, and resources stretched thin across too many moving parts.</p>
-     <p class="section-sub">Whether you are an SME or an MNC working through distributors, we offer flexible and adaptable models that create greater value for your brand, supporting you at every stage of your growth journey.​</p>
-   <!-- BADGES: swapped placeholders for existing homepage award images -->
+    <p class="section-sub">Whether you are an SME or an MNC working through distributors, we offer flexible and adaptable models that create greater value for your brand, supporting you at every stage of your growth journey.</p>
     <div class="badges-row">
       <img src="images/ysg-shopee-premium-2025.webp" alt="Shopee Premium">
       <img src="images/ysg-award-lazada-partner-2024.webp" alt="Lazada Partner">
@@ -329,7 +263,6 @@
   </div>
 </section>
 
-<!-- BRAND COLOURS: added per 16th Sept feedback, sits below the challenges section -->
 <section class="brand-colors">
   <div class="brand-colors-inner">
     <div class="brand-colors-logo">
@@ -345,11 +278,10 @@
   </div>
 </section>
 
-<!-- REGIONAL PRESENCE: cards updated to left-image / right-details layout; PH & ID addresses corrected -->
 <section class="regional">
   <div class="section-wrap">
     <h2 class="section-title">Our <span>Regional</span> Presence</h2>
-    <p class="section-sub">Backed by the YSG Network, we connect technology, commerce, fulfilment, B2B, B2C, Offline to Omnichannel and marketing capabilities to help brands scale across Asia-Pacific. Our regional network includes strategically located warehouses that enable efficient storage, fulfilment, and distribution across key markets.​</p>
+    <p class="section-sub">Backed by the YSG Network, we connect technology, commerce, fulfilment, B2B, B2C, Offline to Omnichannel and marketing capabilities to help brands scale across Asia-Pacific. Our regional network includes strategically located warehouses that enable efficient storage, fulfilment, and distribution across key markets.</p>
 
     <div class="regional-grid">
       <div class="regional-col">
@@ -406,6 +338,7 @@
     </div>
   </div>
 </section>
+
 <section class="team">
   <div class="section-wrap">
     <h2 class="section-title">Meet our <span>Expert</span> Team</h2>
@@ -454,6 +387,7 @@
     </div>
   </div>
 </section>
+
 <section class="stats-about">
   <div class="section-wrap">
     <div class="stats-about-grid">
@@ -469,15 +403,14 @@
         <div class="stat-num">7 Capabilities</div>
         <div class="stat-bottom">
           <div class="stat-label">1 API</div>
-          <div class="stat-desc">Connect multiple functions through one seamless API integration, bringing together B2B, B2C and O2O capabilities to simplify workflows, synchronize data across channels, and enable efficient, seamless commerce operations.​</div>
+          <div class="stat-desc">Connect multiple functions through one seamless API integration, bringing together B2B, B2C and O2O capabilities to simplify workflows, synchronize data across channels, and enable efficient, seamless commerce operations.</div>
         </div>
       </div>
-      <div class="stat-signboard"><img src="images/about-us-office.png" alt=""></div>
+      <div class="stat-signboard"><img src="images/about-us-office.png" alt="YSG office signboard"></div>
     </div>
   </div>
 </section>
 
-<!-- PARTNERS: amazon/ezbuy/lazada already exist; shopee/tiktok/tokopedia/vipshop/zalora still genuinely missing -->
 <section class="partners-about">
   <div class="section-wrap">
     <h2 class="section-title" style="font-size:26px;">Powering growth for brands across operations and e-commerce.</h2>
@@ -543,7 +476,6 @@
   </div>
 </footer>
 
-<!-- FLOATING WHATSAPP BUTTON -->
 <div class="wa-float">
   <div class="wa-tooltip">Chat with us on WhatsApp</div>
   <a class="wa-btn"
