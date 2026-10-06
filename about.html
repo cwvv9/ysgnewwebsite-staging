@@ -198,8 +198,11 @@
     .challenges,
     .partners-about { text-align: left; }
     .section-sub { margin-left: 0; margin-right: 0; }
-    .badges-row,
-    .partners-grid { justify-content: flex-start; }
+    .badges-row { justify-content: flex-start; }
+
+    /* Partner logos: neat 2 x 2 grid on mobile, every logo in an equal-size cell */
+    .partners-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 24px; justify-items: start; align-items: center; }
+    .partners-grid img { height: 32px; max-width: 100%; }
     .brand-colors-inner { flex-direction: column; align-items: flex-start; gap: 28px; text-align: left; }
     .brand-colors-logo { width: 120px; justify-content: flex-start; }
 
