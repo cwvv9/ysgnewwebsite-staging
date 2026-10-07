@@ -128,8 +128,8 @@
 
   /* ── CTA BANNER ── */
   .cta-banner { background: var(--white); padding: 0 0 60px 0; display: flex; justify-content: center; }
-  .cta-banner-inner { position: relative; width: 100%; max-width: 1200px; min-height: 260px; display: flex; align-items: center; background: url('images/cta-bg.png') center center / cover no-repeat; border-radius: 0px; overflow: hidden; }
-  .cta-banner-inner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(30,15,70,0.90) 45%, rgba(30,15,70,0.05) 100%); }
+  .cta-banner-inner { position: relative; width: 100%; max-width: 1200px; min-height: 350px; display: flex; align-items: center; background: url('images/grow-your-business-banner-desktop.webp') center center / cover no-repeat; border-radius: 0px; overflow: hidden; }
+  .cta-banner-inner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(30,15,70,0.90) 0%, rgba(30,15,70,0.05) 28%); }
   .cta-text { position: relative; z-index: 2; max-width: 440px; padding: 56px 48px; }
   .cta-banner h2 { font-size: clamp(28px, 3vw, 42px); font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 12px; }
   .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 28px; }
@@ -215,6 +215,9 @@
     .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
     .footer-bottom-left { display: flex; flex-wrap: wrap; row-gap: 6px; column-gap: 12px; }
 
+    .cta-banner { padding: 0 0 40px 0; }
+    .cta-banner-inner { min-height: 370px; align-items: flex-start; background-image: url('images/grow-your-business-banner-mobile.webp'); }
+    .cta-banner-inner::before { background: linear-gradient(to bottom, rgba(30,15,70,0.88) 60%, rgba(30,15,70,0.5) 100%); }
     .cta-text { padding: 40px 28px; max-width: 100%; width: 100%; }
 
     .wa-float { bottom: 20px; right: 20px; }
@@ -412,7 +415,7 @@
     <div class="cta-text">
       <h2>Ready to Grow<br>Your Business?</h2>
       <p>Let's explore how YSG can support your operations and e-commerce growth.</p>
-      <a href="#contact" class="cta-btn">CONTACT US &nbsp;<span style="color:var(--orange);">→</span></a>
+      <a href="https://wa.me/6587868620?text=Hi%20YSG%2C%20I%27d%20like%20to%20find%20out%20more%20about%20your%20Creative%20services." target="_blank" rel="noopener" class="cta-btn">CONTACT US &nbsp;<span style="color:var(--orange);">→</span></a>
     </div>
   </div>
 </div>
